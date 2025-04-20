@@ -1,0 +1,8 @@
+# BlazorDay Website Codeowners File
+# This file defines individuals or teams responsible for code in this repository
+# Each line is a file pattern followed by one or more owners
+
+# Default owners for everything in the repo
+* @AdrienClerbois @dvoituron @tossnet
+
+
