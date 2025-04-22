@@ -8,7 +8,7 @@ BlazorDay is a specialized online conference focused on ASP.NET Core technologie
 
 ### Event Details
 
-- **Date**: September 18th, 2025
+- **Date**: September 25th, 2025
 - **Starting Time**: 16:00 CET
 - **Format**: Online streaming event
 - **Focus**: .NET 10 technologies with Blazor emphasis
@@ -28,7 +28,7 @@ The event is organized by:
 - **Adrien Clerbois** - Microsoft MVP, Technical Architect, Microsoft technologies enthusiast
 - **Denis Voituron** - Microsoft Technical Architect and Blazor specialist
 - **Christophe "Toss" Peugnet** - Microsoft MVP, self-employed, Blazor trainer and early adopter
-- **Laurent Bugnon** - Master of Ceremony
+- **Laurent Bugnion** - Master of Ceremony
 
 The organizing team will be broadcasting live from a chalet in the Vosges mountains, creating a unique and cozy atmosphere for this tech event.
 

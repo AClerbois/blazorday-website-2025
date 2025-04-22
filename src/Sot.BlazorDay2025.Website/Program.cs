@@ -1,3 +1,7 @@
+// ------------------------------------------------------------------------
+// MIT License - Copyright (c) BlazorDay 2025. All rights reserved.
+// ------------------------------------------------------------------------
+
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using Sot.BlazorDay2025.Website;
