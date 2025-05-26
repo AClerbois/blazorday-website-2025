@@ -84,9 +84,28 @@ h1, h2, h3, h4, h5, h6 {
     max-width: 800px;
   }
 
+  .banner .date-text {
+    position: absolute;
+    top: 260px;
+    right: 20px;
+    background-color: rgba(255, 255, 255, 0.8); /* Optional: for contrast */
+    color: #35326A;
+    font-size: 1.5em;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+    z-index: 10;
+    transform: rotate(-5deg);
+  }
+
 .fluent-layout[mobile] .banner {
   height: 170px;
 }
+
+  .fluent-layout[mobile] .banner .date-text {
+    top: 160px;
+    transform: rotate(-5deg);
+  }
 
 /* Speakers */
 .speaker {
