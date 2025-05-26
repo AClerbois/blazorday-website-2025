@@ -4,10 +4,10 @@
     <!-- Header -->
     <FluentLayoutItem Area="@LayoutArea.Header" Sticky="true" Style="background-color: var(--blazorday-top-bgcolor);">
         <FluentStack VerticalAlignment="VerticalAlignment.Center">
+
             <FluentLayoutHamburger @ref="_hamburger" PanelSize="DialogSize.Small" PanelHeader="BlazorDay 2025">
                 <NavMenu Hamburger="@_hamburger" />
             </FluentLayoutHamburger>
-            <FluentImage Source="/img/logo-635.png" Height="40px" />
 
             <FluentSpacer />
 
@@ -21,8 +21,13 @@
     </FluentLayoutItem>
 
     <!-- Content -->
-    <FluentLayoutItem Area="@LayoutArea.Content" Padding="@Padding.All3">
-        @Body
+    <FluentLayoutItem Area="@LayoutArea.Content">
+        <div class="banner">
+            <img src="/img/blazor-day.png" />
+        </div>
+        <div class="content">
+            @Body
+        </div>
     </FluentLayoutItem>
 
     <!-- Footer -->

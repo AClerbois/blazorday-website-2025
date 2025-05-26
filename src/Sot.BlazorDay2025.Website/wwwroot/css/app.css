@@ -1,26 +1,46 @@
+/* *********************************** */
 /* FluentUI Theme for BlazorDay colors */
+/* *********************************** */
 body {
   --colorBrandBackground: #745597;
   --colorBrandBackgroundHover: #67468e;
   --colorBrandBackgroundPressed: #401b71;
   --colorBrandBackgroundSelected: #5a3884;
-  --blazorday-top-bgcolor: #BE42CB;
+  --blazorday-top-bgcolor: #4B1060;
+  --blazorday-color: #731993;
 }
 
-/* BlazorDay Styles */
+/* *********************************** */
+/*   BlazorDay Styles                  */
+/* *********************************** */
+
+/* Common */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Segoe UI', sans-serif;
+  color: var(--blazorday-color);
+  text-align: center;
+}
+
+.content {
+  padding: 0 24px;
+  justify-self: center;
+  max-width: 1140px;
+}
+
+/* Menus */
 .nav-menu[position='top'] {
   display: flex;
 }
 
-.nav-menu[position='top'] fluent-button {
-  padding: 0;
-  color: var(--colorNeutralBackground1);
-  font-size: medium;
-}
-
-  .nav-menu[position='top'] fluent-button:hover {
-    text-decoration: underline;
+  .nav-menu[position='top'] fluent-button {
+    padding: 0;
+    color: var(--colorNeutralBackground1);
+    font-size: medium;
   }
+
+    .nav-menu[position='top'] fluent-button:hover {
+      text-decoration: underline;
+    }
 
 .nav-menu[position='hamburger'] {
   margin-top: 24px;
@@ -35,9 +55,9 @@ body {
     font-size: medium;
   }
 
-  .nav-menu[position='hamburger'] fluent-button:hover {
-    text-decoration: underline;
-  }
+    .nav-menu[position='hamburger'] fluent-button:hover {
+      text-decoration: underline;
+    }
 
 .fluent-layout[mobile] .nav-menu[position='top'] {
   display: none;
@@ -47,8 +67,50 @@ body {
   display: none;
 }
 
-/* Blazor */
+/* banner */
 
+.banner {
+  background-color: #35326A;
+  background-image: url('/img/banner.png');
+  background-repeat: no-repeat;
+  background-size: 1000px;
+  height: 300px;
+  text-align: center;
+  align-content: center;
+}
+
+  .banner img {
+    width: 100%;
+    max-width: 800px;
+  }
+
+.fluent-layout[mobile] .banner {
+  height: 170px;
+}
+
+/* Team */
+.fluent-grid > div {
+  justify-items: center;
+}
+
+.team-member {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: var(--shadow8);
+  padding: 24px;
+  margin: 12px;
+  width: 400px;
+  height: 320px;
+}
+
+  .team-member img {
+    border-radius: 63% 37% 30% 70% / 50% 45% 55% 50%;
+  }
+
+/* ************************* */
+/*    Blazor                 */
+/* ************************* */
 #blazor-error-ui {
   color-scheme: light only;
   background: lightyellow;
