@@ -8,6 +8,7 @@ body {
   --colorBrandBackgroundSelected: #5a3884;
   --blazorday-top-bgcolor: #4B1060;
   --blazorday-color: #731993;
+  overflow-x: hidden;
 }
 
 /* *********************************** */
@@ -85,9 +86,11 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   .banner .date-text {
-    position: absolute;
-    top: 260px;
+    position: sticky;
+    top: 220px;
     right: 20px;
+    margin-left: auto;
+    width: 300px;
     background-color: rgba(255, 255, 255, 0.8); /* Optional: for contrast */
     color: #35326A;
     font-size: 1.5em;
@@ -103,7 +106,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
   .fluent-layout[mobile] .banner .date-text {
-    top: 160px;
+    top: 120px;
     transform: rotate(-5deg);
   }
 
