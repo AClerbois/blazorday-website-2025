@@ -5,6 +5,6 @@
 namespace Sot.BlazorDay2025.Website.Pages;
 
 /// <summary />
-public partial class Speakers
+public partial class TeamPage
 {
 }

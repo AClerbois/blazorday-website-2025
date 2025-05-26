@@ -5,6 +5,6 @@
 namespace Sot.BlazorDay2025.Website.Pages;
 
 /// <summary />
-public partial class Contact
+public partial class SponsorsPage
 {
 }
