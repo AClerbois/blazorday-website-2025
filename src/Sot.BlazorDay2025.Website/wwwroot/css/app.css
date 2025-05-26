@@ -88,10 +88,21 @@ h1, h2, h3, h4, h5, h6 {
   height: 170px;
 }
 
-/* Team */
-.fluent-grid > div {
-  justify-items: center;
+/* Speakers */
+.speaker {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
 }
+
+  .speaker img {
+      width: 200px;
+  }
+
+  /* Team */
+  .fluent-grid > div {
+    justify-items: center;
+  }
 
 .team-member {
   display: flex;
