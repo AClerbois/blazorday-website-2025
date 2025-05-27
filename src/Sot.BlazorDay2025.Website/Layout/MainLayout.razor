@@ -1,16 +1,52 @@
 ﻿@inherits LayoutComponentBase
-<div class="page">
-    <div class="sidebar">
-        <NavMenu />
-    </div>
 
-    <main>
-        <div class="top-row px-4">
-            <a href="https://learn.microsoft.com/aspnet/core/" target="_blank">About</a>
+<FluentLayout>
+    <!-- Header -->
+    <FluentLayoutItem Area="@LayoutArea.Header" Sticky="true" Style="background-color: var(--blazorday-top-bgcolor);">
+        <FluentStack VerticalAlignment="VerticalAlignment.Center">
+
+            <FluentLayoutHamburger @ref="_hamburger" PanelSize="DialogSize.Small" PanelHeader="BlazorDay 2025">
+                <NavMenu Hamburger="@_hamburger" />
+            </FluentLayoutHamburger>
+
+            <FluentSpacer />
+
+            <FluentStack HorizontalGap="12px" Width="fit-content">
+                <NavMenu />
+            </FluentStack>
+
+            <FluentSpacer />
+
+        </FluentStack>
+    </FluentLayoutItem>
+
+    <!-- Content -->
+    <FluentLayoutItem Area="@LayoutArea.Content" Style="overflow-x: hidden; overflow-y: scroll;">
+        <div class="banner">
+            <div class="date-text">September 25, 2025</div>
+            <img src="/img/blazor-day.png" alt="banner" />
         </div>
-
-        <article class="content px-4">
+        <div class="content">
             @Body
-        </article>
-    </main>
-</div>
+        </div>
+    </FluentLayoutItem>
+
+    <!-- Footer -->
+    <FluentLayoutItem Area="@LayoutArea.Footer" Sticky="false" Style="display: flex;">
+        <div class="footer-copy">
+            &copy; BlazorDay Team - 2025
+        </div>
+        <FluentSpacer />
+
+        <FluentStack HorizontalGap="24px" Width="fit-content">
+            <a href="/code-conduct">Code of Conduct</a>
+            <a href="/hall-fame">Hall of Fame</a>
+            <a href="/team">Team</a>
+        </FluentStack>
+        <FluentSpacer />
+    </FluentLayoutItem>
+
+</FluentLayout>
+
+@* Add all FluentUI Blazor Providers *@
+<FluentProviders />
