@@ -73,7 +73,7 @@ h1, h2, h3, h4, h5, h6 {
   }
 
     .loading-progress circle:last-child {
-      stroke: #1b6ec2;
+      stroke: var(--colorBrandForeground1);
       stroke-dasharray: calc(3.141 * var(--blazor-load-percentage, 0%) * 0.8), 500%;
       transition: stroke-dasharray 0.05s ease-in-out;
     }
