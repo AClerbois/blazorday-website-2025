@@ -1,0 +1,49 @@
+.content {
+  padding: 0 24px;
+  justify-self: center;
+  max-width: 1140px;
+}
+
+.banner {
+  background-color: #35326A;
+  background-image: url('/img/banner.png');
+  background-repeat: no-repeat;
+  background-size: 1000px;
+  height: 300px;
+  text-align: center;
+  align-content: center;
+}
+
+  .banner ::deep img {
+    width: 100%;
+    max-width: 800px;
+  }
+
+  .banner ::deep .date-text {
+    position: sticky;
+    top: 220px;
+    right: 20px;
+    margin-left: auto;
+    width: 300px;
+    background-color: rgba(255, 255, 255, 0.8); /* Optional: for contrast */
+    color: #35326A;
+    font-size: 1.5em;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+    z-index: 10;
+    transform: rotate(-5deg);
+  }
+
+.fluent-layout[mobile] .banner {
+  height: 170px;
+}
+
+  .fluent-layout[mobile] .banner ::deep .date-text {
+    top: 120px;
+    transform: rotate(-5deg);
+  }
+
+.fluent-layout[mobile] .footer-copy {
+  display: none;
+}

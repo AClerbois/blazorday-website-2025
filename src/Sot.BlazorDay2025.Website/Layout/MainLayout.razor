@@ -1,52 +1,54 @@
 ﻿@inherits LayoutComponentBase
 
-<FluentLayout>
-    <!-- Header -->
-    <FluentLayoutItem Area="@LayoutArea.Header" Sticky="true" Style="background-color: var(--blazorday-top-bgcolor);">
-        <FluentStack VerticalAlignment="VerticalAlignment.Center">
+<div>
+    <FluentLayout>
+        <!-- Header -->
+        <FluentLayoutItem Area="@LayoutArea.Header" Sticky="true" Style="background-color: var(--blazorday-top-bgcolor);">
+            <FluentStack VerticalAlignment="VerticalAlignment.Center">
 
-            <FluentLayoutHamburger @ref="_hamburger" PanelSize="DialogSize.Small" PanelHeader="BlazorDay 2025">
-                <NavMenu Hamburger="@_hamburger" />
-            </FluentLayoutHamburger>
+                <FluentLayoutHamburger @ref="_hamburger" PanelSize="DialogSize.Small" PanelHeader="BlazorDay 2025">
+                    <NavMenu Hamburger="@_hamburger" />
+                </FluentLayoutHamburger>
 
-            <FluentSpacer />
+                <FluentSpacer />
 
-            <FluentStack HorizontalGap="12px" Width="fit-content">
-                <NavMenu />
+                <FluentStack HorizontalGap="12px" Width="fit-content">
+                    <NavMenu />
+                </FluentStack>
+
+                <FluentSpacer />
+
             </FluentStack>
+        </FluentLayoutItem>
 
+        <!-- Content -->
+        <FluentLayoutItem Area="@LayoutArea.Content" Style="overflow-x: hidden; overflow-y: scroll;">
+            <div class="banner">
+                <div class="date-text">September 25, 2025</div>
+                <img src="/img/blazor-day.png" alt="banner" />
+            </div>
+            <div class="content">
+                @Body
+            </div>
+        </FluentLayoutItem>
+
+        <!-- Footer -->
+        <FluentLayoutItem Area="@LayoutArea.Footer" Sticky="false" Style="display: flex;">
+            <div class="footer-copy">
+                &copy; BlazorDay Team - 2025
+            </div>
             <FluentSpacer />
 
-        </FluentStack>
-    </FluentLayoutItem>
+            <FluentStack HorizontalGap="24px" Width="fit-content">
+                <a href="/code-conduct">Code of Conduct</a>
+                <a href="/hall-fame">Hall of Fame</a>
+                <a href="/team">Team</a>
+            </FluentStack>
+            <FluentSpacer />
+        </FluentLayoutItem>
 
-    <!-- Content -->
-    <FluentLayoutItem Area="@LayoutArea.Content" Style="overflow-x: hidden; overflow-y: scroll;">
-        <div class="banner">
-            <div class="date-text">September 25, 2025</div>
-            <img src="/img/blazor-day.png" alt="banner" />
-        </div>
-        <div class="content">
-            @Body
-        </div>
-    </FluentLayoutItem>
-
-    <!-- Footer -->
-    <FluentLayoutItem Area="@LayoutArea.Footer" Sticky="false" Style="display: flex;">
-        <div class="footer-copy">
-            &copy; BlazorDay Team - 2025
-        </div>
-        <FluentSpacer />
-
-        <FluentStack HorizontalGap="24px" Width="fit-content">
-            <a href="/code-conduct">Code of Conduct</a>
-            <a href="/hall-fame">Hall of Fame</a>
-            <a href="/team">Team</a>
-        </FluentStack>
-        <FluentSpacer />
-    </FluentLayoutItem>
-
-</FluentLayout>
+    </FluentLayout>
+</div>
 
 @* Add all FluentUI Blazor Providers *@
 <FluentProviders />

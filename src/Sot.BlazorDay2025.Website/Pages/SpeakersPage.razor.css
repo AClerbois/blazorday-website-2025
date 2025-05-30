@@ -1,0 +1,23 @@
+::deep .fluent-grid > div {
+  justify-items: center;
+}
+
+::deep .speaker {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  border: 1px solid var(--colorNeutralBackground3);
+  border-radius: 8px;
+  box-shadow: var(--shadow8)
+}
+
+  ::deep .speaker img {
+    width: 200px;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+
+  ::deep .speaker svg {
+    align-self: end;
+    margin-bottom: 8px;
+  }
