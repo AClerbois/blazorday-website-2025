@@ -58,6 +58,7 @@ jobs:
     - name: Deploy to Azure Static Web Apps
       uses: Azure/static-web-apps-deploy@v1
       with:
-          azure_static_web_apps_api_token: fccc88d912f944053c1f4cab8b67d421bac25282d86ce7153ff2b9435ad3221e06-5cf161f4-d4c1-4447-8d36-87ada50727f70032513062f1ee03
-          app_location: 'publish'        # le dossier de sortie du build
-          output_location: ''            # vide pour la plupart des apps .NET
+        azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
+        app_location: 'publish'        # le dossier de sortie du build
+        output_location: ''            # vide pour la plupart des apps .NET
+        action: "upload"
