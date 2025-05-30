@@ -11,7 +11,7 @@ namespace Sot.BlazorDay2025.Website.Pages;
 /// <summary />
 public partial class SpeakersPage
 {
-    private static readonly Icon OpenIcon = new Microsoft.FluentUI.AspNetCore.Components.Icons.Regular.Size20.Open();
+    internal static readonly Icon OpenIcon = new Microsoft.FluentUI.AspNetCore.Components.Icons.Regular.Size20.Open();
 
     /// <summary />
     [Inject]
@@ -27,7 +27,7 @@ public partial class SpeakersPage
     /// <summary>
     /// Display the speaker detail page
     /// </summary>
-    private async Task OpenSpeakerDetailAsync(string id)
+    internal async Task OpenSpeakerDetailAsync(string id)
     {
         NavigationManager.NavigateTo($"/speakers/{id}");
         await Task.CompletedTask;

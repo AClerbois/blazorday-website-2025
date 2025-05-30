@@ -7,7 +7,10 @@ body {
   --colorBrandBackgroundHover: #B200FF;
   --colorBrandBackgroundPressed: #401b71;
   --colorBrandBackgroundSelected: #5a3884;
+  --colorBrandForeground1: #4B1060;
   --colorNeutralForeground2BrandHover: #B200FF;
+  --colorBrandForegroundLink: #4B1060;
+  --colorBrandForegroundLinkHover: #B200FF;
   --blazorday-top-bgcolor: #4B1060;
   --blazorday-color: #731993;
   overflow-x: hidden;
@@ -70,7 +73,7 @@ h1, h2, h3, h4, h5, h6 {
   }
 
     .loading-progress circle:last-child {
-      stroke: #1b6ec2;
+      stroke: var(--colorBrandForeground1);
       stroke-dasharray: calc(3.141 * var(--blazor-load-percentage, 0%) * 0.8), 500%;
       transition: stroke-dasharray 0.05s ease-in-out;
     }
