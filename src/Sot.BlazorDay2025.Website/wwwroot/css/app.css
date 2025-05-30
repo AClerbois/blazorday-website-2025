@@ -4,9 +4,10 @@
 
 body {
   --colorBrandBackground: #745597;
-  --colorBrandBackgroundHover: #67468e;
+  --colorBrandBackgroundHover: #B200FF;
   --colorBrandBackgroundPressed: #401b71;
   --colorBrandBackgroundSelected: #5a3884;
+  --colorNeutralForeground2BrandHover: #B200FF;
   --blazorday-top-bgcolor: #4B1060;
   --blazorday-color: #731993;
   overflow-x: hidden;

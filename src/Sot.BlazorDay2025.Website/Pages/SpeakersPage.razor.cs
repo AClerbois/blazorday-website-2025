@@ -3,6 +3,7 @@
 // ------------------------------------------------------------------------
 
 using Microsoft.AspNetCore.Components;
+using Microsoft.FluentUI.AspNetCore.Components;
 using Sot.BlazorDay2025.Website.Models;
 
 namespace Sot.BlazorDay2025.Website.Pages;
@@ -10,6 +11,8 @@ namespace Sot.BlazorDay2025.Website.Pages;
 /// <summary />
 public partial class SpeakersPage
 {
+    private static readonly Icon OpenIcon = new Microsoft.FluentUI.AspNetCore.Components.Icons.Regular.Size20.Open();
+
     /// <summary />
     [Inject]
     public required NavigationManager NavigationManager { get; set; }

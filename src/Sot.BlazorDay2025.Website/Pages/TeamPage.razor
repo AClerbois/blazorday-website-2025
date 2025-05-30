@@ -5,45 +5,22 @@
 
     <FluentGrid Spacing="2">
 
-        <FluentGridItem Xs="12" Md="6">
-            <div class="team-member">
-                <FluentText Weight="TextWeight.Bold" Size="TextSize.Size700" Color="Color.Custom" CustomColor="var(--blazorday-color)">
-                    Laurent Bugnion
-                </FluentText>
-                <FluentText>Principal Cloud Developer Advocate @@ Microsoft</FluentText>
-                <FluentImage Source="/img/team-laurent.jpg" Width="200px" Margin="@Margin.Top2" />
-            </div>
-        </FluentGridItem>
-
-        <FluentGridItem Xs="12" Md="6">
-            <div class="team-member">
-                <FluentText Weight="TextWeight.Bold" Size="TextSize.Size700" Color="Color.Custom" CustomColor="var(--blazorday-color)">
-                    Adrien Clerbois
-                </FluentText>
-                <FluentText>Microsoft MVP & .NET Technical Architect</FluentText>
-                <FluentImage Source="/img/team-adrien.jpg" Width="200px" Margin="@Margin.Top2" />
-            </div>
-        </FluentGridItem>
-
-        <FluentGridItem Xs="12" Md="6">
-            <div class="team-member">
-                <FluentText Weight="TextWeight.Bold" Size="TextSize.Size700" Color="Color.Custom" CustomColor="var(--blazorday-color)">
-                    Christophe Peugnet
-                </FluentText>
-                <FluentText>Microsoft MVP & .NET / Blazor Dev | Formateur</FluentText>
-                <FluentImage Source="/img/team-christophe.jpg" Width="200px" />
-            </div>
-        </FluentGridItem>
-
-        <FluentGridItem Xs="12" Md="6">
-            <div class="team-member">
-                <FluentText Weight="TextWeight.Bold" Size="TextSize.Size700" Color="Color.Custom" CustomColor="var(--blazorday-color)">
-                    Denis Voituron
-                </FluentText>
-                <FluentText>Principal Software Engineer @@ Microsoft</FluentText>
-                <FluentImage Source="/img/team-denis.jpg" Width="200px" />
-            </div>
-        </FluentGridItem>
+        @foreach (var member in TeamMembers)
+        {
+            <FluentGridItem Xs="12" Md="6">
+                <div class="team-member">
+                    <FluentText Weight="TextWeight.Bold" Size="TextSize.Size700" Color="Color.Custom" CustomColor="var(--blazorday-color)">
+                        @member.Name
+                    </FluentText>
+                    <FluentText>@member.Title</FluentText>
+                    <FluentImage Source="@member.ImageUrl" Width="200px" Margin="@Margin.Top2" />
+                    <FluentButton Appearance="ButtonAppearance.Transparent"
+                                  IconEnd="@OpenIcon"
+                                  Label="LinkedIn"
+                                  OnClick="@(async e => await OpenTeamDetailAsync(member.LinkedIn))" />
+                </div>
+            </FluentGridItem>
+        }
 
     </FluentGrid>
 </div>
