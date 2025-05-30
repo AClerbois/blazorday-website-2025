@@ -27,6 +27,8 @@ jobs:
         dotnet-version: 9.0.x
     - name: Restore dependencies
       run: dotnet restore
+      env:
+        DOTNET_NUGET_SIGNATURE_VERIFICATION: false
     - name: Build
       run: dotnet build --no-restore -c Release --no-logo
 
