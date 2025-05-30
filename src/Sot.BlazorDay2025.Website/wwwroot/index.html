@@ -36,6 +36,12 @@
           setTimeout(waitForTheme, 50);
         }
       })();
+
+      // Used to open an URL in a new tab
+      window.openInNewTab = function (url) {
+        window.open(url, '_blank');
+      };
+
     </script>
 </body>
 

@@ -17,7 +17,7 @@
     cursor: pointer;
   }
 
-  ::deep .speaker svg {
+  ::deep .speaker fluent-button {
     align-self: end;
     margin-bottom: 8px;
   }

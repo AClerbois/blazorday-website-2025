@@ -17,7 +17,11 @@
                         <FluentText>
                             @speaker.Title
                         </FluentText>
-                        <FluentIcon Value="@(new Icons.Regular.Size20.Open())" OnClick="@(async e => await OpenSpeakerDetailAsync(speaker.Id))" />
+                        <FluentButton Appearance="ButtonAppearance.Transparent"
+                                      IconEnd="@OpenIcon"
+                                      IconOnly="true"
+                                      aria-label="@($"Go to {speaker.Name}'s detailed page")"
+                                      OnClick="@(async e => await OpenSpeakerDetailAsync(speaker.Id))" />
                     </FluentStack>
                 </div>
             </FluentGridItem>

@@ -12,6 +12,10 @@
       text-decoration: underline;
     }
 
+  .nav-menu[position='top'] ::deep fluent-button:focus-visible {
+    box-shadow: var(--shadow4), 0 0 0 2px white;
+  }
+
 .nav-menu[position='hamburger'] {
   margin-top: 24px;
   display: flex;
