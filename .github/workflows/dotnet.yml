@@ -46,6 +46,7 @@ jobs:
     if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     needs: build
+    environment: blazor-day-production
 
     steps:
     - name: Download artifact
