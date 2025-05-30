@@ -40,7 +40,7 @@ public partial class TeamPage
         },
          new TeamMember
         {
-            Name = " Denis Voituron",
+            Name = "Denis Voituron",
             Title = "Principal Software Engineer @ Microsoft",
             ImageUrl = "/img/team-denis.jpg",
             LinkedIn = "https://www.linkedin.com/in/denisvoituron/",
