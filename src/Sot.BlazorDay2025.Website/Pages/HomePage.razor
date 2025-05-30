@@ -11,6 +11,16 @@
         <br /><br />
     </section>
 
+    <div class="follow-live">
+        <FluentButton Appearance="ButtonAppearance.Primary"
+                      Size="ButtonSize.Large"
+                      Shape="ButtonShape.Circular"
+                      IconStart="@(new Icons.Regular.Size24.VideoLink())"
+                      OnClick="@(async e => await FollowLiveAsync())">
+            Follow live
+        </FluentButton>
+    </div>
+
     <div class="home-main-card">
         <h2>
             @(new Icons.Regular.Size32.Calendar().ToMarkup())
@@ -19,11 +29,11 @@
 
         <section>
             <p style="text-align: center; font-size: larger;">
-                <b>The adventure Blazor Day</b><br />
+                <b>The Blazor Day Adventure</b><br />
                 <br /><br />
-                <b>Blazor Day</b> is an online event dedicated to Blazor technologies. <br />
-                Originally launched by three MVP friends—Adrien, Christophe, and Denis. <br /><br />
-                This event was created to share their passion for .NET, and especially for Blazor.<br />
+                <b>Blazor Day</b> is an online event dedicated to Blazor technologies.<br />
+                Originally launched by three MVP friends (Adrien, Christophe, and Denis) <br />
+                this event was created to share their passion for .NET, and especially for <b>Blazor</b>.
                 <br /><br />
                 Blazor is part of the <a href="https://learn.microsoft.com/aspnet/core/blazor/" target="_blank">ASP.NET Core framework</a>
                 and is offered as an <a href="https://github.com/dotnet/aspnetcore/" target="_blank">open-source project</a> by Microsoft.
@@ -50,7 +60,7 @@
                 <FluentButton Appearance="ButtonAppearance.Transparent"
                               IconEnd="@OpenIcon"
                               Label="Relive this moment live"
-                              OnClick="@(async e => await OpenTeamDetailAsync("https://youtu.be/XoizucRjxgU"))" />
+                              OnClick="@(async e => await OpenHomeDetailAsync("https://youtu.be/XoizucRjxgU"))" />
             </div>
         </FluentGridItem>
 
@@ -69,7 +79,7 @@
                 <FluentButton Appearance="ButtonAppearance.Transparent"
                               IconEnd="@OpenIcon"
                               Label="Relive this moment live"
-                              OnClick="@(async e => await OpenTeamDetailAsync("https://www.youtube.com/live/t_UyOXydnsQ"))" />
+                              OnClick="@(async e => await OpenHomeDetailAsync("https://www.youtube.com/live/t_UyOXydnsQ"))" />
             </div>
         </FluentGridItem>
 

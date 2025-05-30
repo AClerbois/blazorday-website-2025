@@ -7,6 +7,11 @@ namespace Sot.BlazorDay2025.Website.Models;
 /// <summary />
 public class DataBase
 {
+    /// <summary>
+    /// URL to the live stream of the event
+    /// </summary>
+    public string LiveUrl = "https://www.youtube.com/live/4xDzrJKXOOY";
+
     /// <summary />
     public IEnumerable<Speaker> Speakers { get; set; } =
     [

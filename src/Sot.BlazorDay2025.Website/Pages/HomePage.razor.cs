@@ -5,6 +5,7 @@
 using Microsoft.AspNetCore.Components;
 using Microsoft.FluentUI.AspNetCore.Components;
 using Microsoft.JSInterop;
+using Sot.BlazorDay2025.Website.Models;
 
 namespace Sot.BlazorDay2025.Website.Pages;
 
@@ -15,16 +16,25 @@ public partial class HomePage
 
     /// <summary />
     [Inject]
+    public required DataBase DataBase { get; set; }
+
+    /// <summary />
+    [Inject]
     public required NavigationManager NavigationManager { get; set; }
 
     /// <summary />
     [Inject]
     public required IJSRuntime JSRuntime { get; set; }
 
+    private async Task FollowLiveAsync()
+    {
+        await JSRuntime.InvokeVoidAsync("openInNewTab", DataBase.LiveUrl);
+    }
+
     /// <summary>
-    /// Display the speaker detail page
+    /// Display the Home Card detail page
     /// </summary>
-    private async Task OpenTeamDetailAsync(string url)
+    private async Task OpenHomeDetailAsync(string url)
     {
         if (url.StartsWith("http", StringComparison.Ordinal))
         {

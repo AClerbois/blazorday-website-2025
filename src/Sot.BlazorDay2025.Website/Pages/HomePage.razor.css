@@ -18,3 +18,8 @@
     margin-bottom: 8px;
     color: var(--colorNeutralForeground2Link);
   }
+
+.follow-live {
+  text-align: center;
+  padding: 24px;
+}
