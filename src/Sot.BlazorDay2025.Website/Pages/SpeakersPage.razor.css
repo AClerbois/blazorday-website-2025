@@ -20,4 +20,5 @@
   ::deep .speaker fluent-button {
     align-self: end;
     margin-bottom: 8px;
+    color: var(--colorNeutralForeground2Link);
   }

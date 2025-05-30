@@ -1,0 +1,20 @@
+.home-main-card {
+  box-shadow: var(--shadow8);
+  padding: 24px;
+  margin: 12px;
+}
+
+.home-card {
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow8);
+  padding: 24px;
+  margin: 12px;
+  height: 370px;
+}
+
+  .home-card ::deep fluent-button {
+    align-self: end;
+    margin-bottom: 8px;
+    color: var(--colorNeutralForeground2Link);
+  }

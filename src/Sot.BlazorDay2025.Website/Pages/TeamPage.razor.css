@@ -20,5 +20,5 @@
   .team-member ::deep fluent-button {
     align-self: end;
     margin-bottom: 8px;
-    color: gray;
+    color: var(--colorNeutralForeground2Link);
   }

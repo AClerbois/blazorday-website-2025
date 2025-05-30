@@ -1,5 +1,77 @@
 ﻿@page "/"
 
 <div>
-    <h1>Home</h1>
+    <h1>The online conf about Blazor</h1>
+
+    <section>
+        <p style="text-align: center; font-size: larger;">
+            After hitting more than 36K viewers for its first and second edition, <br />
+            BlazorDay comes back. With more Blazor rock stars, even more fun and more... <b>Blazor love !</b>
+        </p>
+        <br /><br />
+    </section>
+
+    <div class="home-main-card">
+        <h2>
+            @(new Icons.Regular.Size32.Calendar().ToMarkup())
+            Thursday, September 25, 2025
+        </h2>
+
+        <section>
+            <p style="text-align: center; font-size: larger;">
+                <b>The adventure Blazor Day</b><br />
+                <br /><br />
+                <b>Blazor Day</b> is an online event dedicated to Blazor technologies. <br />
+                Originally launched by three MVP friends—Adrien, Christophe, and Denis. <br /><br />
+                This event was created to share their passion for .NET, and especially for Blazor.<br />
+                <br /><br />
+                Blazor is part of the <a href="https://learn.microsoft.com/aspnet/core/blazor/" target="_blank">ASP.NET Core framework</a>
+                and is offered as an <a href="https://github.com/dotnet/aspnetcore/" target="_blank">open-source project</a> by Microsoft.
+            </p>
+        </section>
+    </div>
+
+    <FluentGrid Spacing="2">
+
+        <FluentGridItem Xs="12" Md="6">
+            <div class="home-card">
+                <FluentText Weight="TextWeight.Bold" Size="TextSize.Size700" Color="Color.Custom" CustomColor="var(--blazorday-color)">
+                    BlazorDay 2020
+                </FluentText>
+                <FluentText>
+                    <div style="font-weight: bolder;">Relive the First Edition of BlazorDay!</div><br /><br />
+
+                    Our very first BlazorDay was an unforgettable celebration of the Blazor community. During this edition, we had the privilege of welcoming some of the biggest
+                    names in the ecosystem—rock stars like Daniel Roth, Ed Charbeneau, Chris Sainty, Bruno Barrette, Ahmad Mozaffar, and many others.
+                    <br />
+                    Whether it was an afternoon or an evening depending on your time zone, we came together live to mark the first anniversary of BlazorDay with passion, learning, and a shared love for Blazor.
+                </FluentText>
+                <FluentSpacer Orientation="Orientation.Vertical" />
+                <FluentButton Appearance="ButtonAppearance.Transparent"
+                              IconEnd="@OpenIcon"
+                              Label="Relive this moment live"
+                              OnClick="@(async e => await OpenTeamDetailAsync("https://youtu.be/XoizucRjxgU"))" />
+            </div>
+        </FluentGridItem>
+
+        <FluentGridItem Xs="12" Md="6">
+            <div class="home-card">
+                <FluentText Weight="TextWeight.Bold" Size="TextSize.Size700" Color="Color.Custom" CustomColor="var(--blazorday-color)">
+                    BlazorDay 2021
+                </FluentText>
+                <FluentText>
+                    <div style="font-weight: bolder;">Relive the Energy of BlazorDay – Second Edition!</div><br /><br />
+                    Following the success of our inaugural event, the second edition of BlazorDay brought even more excitement, insights, and community spirit.
+                    This time, we were thrilled to welcome new stars to the lineup—exceptional speakers who helped elevate the experience to new heights.
+
+                </FluentText>
+                <FluentSpacer Orientation="Orientation.Vertical" />
+                <FluentButton Appearance="ButtonAppearance.Transparent"
+                              IconEnd="@OpenIcon"
+                              Label="Relive this moment live"
+                              OnClick="@(async e => await OpenTeamDetailAsync("https://www.youtube.com/live/t_UyOXydnsQ"))" />
+            </div>
+        </FluentGridItem>
+
+    </FluentGrid>
 </div>
