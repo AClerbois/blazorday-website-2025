@@ -41,4 +41,22 @@ jobs:
       with:
         name: blazorday-website
         path: ./src/publish
-      
+
+  deploy:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    needs: build
+
+    steps:
+    - name: Download artifact
+      uses: actions/download-artifact@v4
+      with:
+        name: blazorday-website
+        path: ./publish
+
+    - name: Deploy to Azure Static Web Apps
+      uses: Azure/static-web-apps-deploy@v1
+      with:
+          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
+          app_location: 'publish'        # le dossier de sortie du build
+          output_location: ''            # vide pour la plupart des apps .NET
