@@ -1,25 +1,27 @@
 ﻿@page "/speakers"
 
-<h1>Speakers</h1>
+<div>
+    <h1>Speakers</h1>
 
-<FluentGrid Spacing="4">
+    <FluentGrid Spacing="4">
 
-    @foreach (var speaker in Speakers)
-    {
-        <FluentGridItem Xs="12" Sm="6" Md="3">
-            <div class="speaker">
-                <FluentImage Source="@speaker.PhotoUrl" @onclick="@(async e => await OpenSpeakerDetailAsync(speaker.Id))" />
-                <FluentStack Orientation="Orientation.Vertical" Padding="@Padding.Horizontal2">
-                    <FluentText Weight="TextWeight.Bold" Size="TextSize.Size500" Color="Color.Custom" CustomColor="var(--blazorday-color)">
-                        @speaker.Name
-                    </FluentText>
-                    <FluentText>
-                        @speaker.Title
-                    </FluentText>
-                    <FluentIcon Value="@(new Icons.Regular.Size20.Open())" OnClick="@(async e => await OpenSpeakerDetailAsync(speaker.Id))" />
-                </FluentStack>
-            </div>
-        </FluentGridItem>
-    }
+        @foreach (var speaker in Speakers)
+        {
+            <FluentGridItem Xs="12" Sm="6" Md="3">
+                <div class="speaker">
+                    <FluentImage Source="@speaker.PhotoUrl" @onclick="@(async e => await OpenSpeakerDetailAsync(speaker.Id))" />
+                    <FluentStack Orientation="Orientation.Vertical" Padding="@Padding.Horizontal2">
+                        <FluentText Weight="TextWeight.Bold" Size="TextSize.Size500" Color="Color.Custom" CustomColor="var(--blazorday-color)">
+                            @speaker.Name
+                        </FluentText>
+                        <FluentText>
+                            @speaker.Title
+                        </FluentText>
+                        <FluentIcon Value="@(new Icons.Regular.Size20.Open())" OnClick="@(async e => await OpenSpeakerDetailAsync(speaker.Id))" />
+                    </FluentStack>
+                </div>
+            </FluentGridItem>
+        }
 
-</FluentGrid>
+    </FluentGrid>
+</div>

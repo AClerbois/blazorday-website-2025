@@ -1,6 +1,7 @@
 /* *********************************** */
 /* FluentUI Theme for BlazorDay colors */
 /* *********************************** */
+
 body {
   --colorBrandBackground: #745597;
   --colorBrandBackgroundHover: #67468e;
@@ -11,145 +12,11 @@ body {
   overflow-x: hidden;
 }
 
-/* *********************************** */
-/*   BlazorDay Styles                  */
-/* *********************************** */
-
-/* Common */
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Segoe UI', sans-serif;
   color: var(--blazorday-color);
   text-align: center;
 }
-
-.content {
-  padding: 0 24px;
-  justify-self: center;
-  max-width: 1140px;
-}
-
-/* Menus */
-.nav-menu[position='top'] {
-  display: flex;
-}
-
-  .nav-menu[position='top'] fluent-button {
-    padding: 0;
-    color: var(--colorNeutralBackground1);
-    font-size: medium;
-  }
-
-    .nav-menu[position='top'] fluent-button:hover {
-      text-decoration: underline;
-    }
-
-.nav-menu[position='hamburger'] {
-  margin-top: 24px;
-  display: flex;
-  row-gap: 12px;
-  flex-direction: column;
-}
-
-  .nav-menu[position='hamburger'] fluent-button {
-    justify-content: left;
-    color: var(--colorBrandBackground);
-    font-size: medium;
-  }
-
-    .nav-menu[position='hamburger'] fluent-button:hover {
-      text-decoration: underline;
-    }
-
-.fluent-layout[mobile] .nav-menu[position='top'] {
-  display: none;
-}
-
-.fluent-layout[mobile] .footer-copy {
-  display: none;
-}
-
-/* banner */
-
-.banner {
-  background-color: #35326A;
-  background-image: url('/img/banner.png');
-  background-repeat: no-repeat;
-  background-size: 1000px;
-  height: 300px;
-  text-align: center;
-  align-content: center;
-}
-
-  .banner img {
-    width: 100%;
-    max-width: 800px;
-  }
-
-  .banner .date-text {
-    position: sticky;
-    top: 220px;
-    right: 20px;
-    margin-left: auto;
-    width: 300px;
-    background-color: rgba(255, 255, 255, 0.8); /* Optional: for contrast */
-    color: #35326A;
-    font-size: 1.5em;
-    font-weight: bold;
-    padding: 5px 10px;
-    border-radius: 5px;
-    z-index: 10;
-    transform: rotate(-5deg);
-  }
-
-.fluent-layout[mobile] .banner {
-  height: 170px;
-}
-
-  .fluent-layout[mobile] .banner .date-text {
-    top: 120px;
-    transform: rotate(-5deg);
-  }
-
-/* Speakers */
-.speaker {
-  display: flex;
-  flex-direction: column;
-  width: 200px;
-  border: 1px solid var(--colorNeutralBackground3);
-  border-radius: 8px;
-  box-shadow: var(--shadow8)
-}
-
-  .speaker img {
-    width: 200px;
-    border-radius: 8px;
-    cursor: pointer;
-  }
-
-  .speaker svg {
-    align-self: end;
-    margin-bottom: 8px;
-  }
-
-/* Team */
-.fluent-grid > div {
-  justify-items: center;
-}
-
-.team-member {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  box-shadow: var(--shadow8);
-  padding: 24px;
-  margin: 12px;
-  width: 400px;
-  height: 320px;
-}
-
-  .team-member img {
-    border-radius: 63% 37% 30% 70% / 50% 45% 55% 50%;
-  }
 
 /* ************************* */
 /*    Blazor                 */
