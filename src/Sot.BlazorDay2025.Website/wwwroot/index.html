@@ -2,47 +2,73 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sot.BlazorDay2025.Website</title>
-    <base href="/" />
-    <link rel="stylesheet" href="css/app.css" />
-    <link rel="icon" type="image/png" href="favicon.png" />
-    <link href="Sot.BlazorDay2025.Website.styles.css" rel="stylesheet" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <base href="/" />
+  <title>BlazorDay 2025</title>
+  <link rel="stylesheet" href="css/app.css" />
+  <link href="Sot.BlazorDay2025.Website.styles.css" rel="stylesheet" />
+
+  <!-- Description -->
+  <meta name="author" content="Adrien, Christophe, Denis">
+  <meta name="description" content="After hitting more than 36K viewers for its first and second edition, BlazorDay comes back. With more Blazor rock stars, even more fun and more... Blazor love.">
+  <meta name="keywords" content="Blazor, BlazorDay, AspNetCore">
+  <link rel="canonical" href="https://blazorday.net">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://blazorday.net">
+  <meta property="og:title" content="Blazor Day 2025">
+  <meta property="og:description" content="After hitting more than 36K viewers for its first and second edition, BlazorDay comes back. With more Blazor rock stars, even more fun and more... Blazor love.">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://blazorday.net">
+  <meta property="twitter:title" content="Blazor Day 2025">
+  <meta property="twitter:description" content="After hitting more than 36K viewers for its first and second edition, BlazorDay comes back. With more Blazor rock stars, even more fun and more... Blazor love.">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/favicon-192.png">
+  <meta name="theme-color" content="#ffffff">
 </head>
 
 <body>
-    <div id="app">
-        <svg class="loading-progress">
-            <circle r="40%" cx="50%" cy="50%" />
-            <circle r="40%" cx="50%" cy="50%" />
-        </svg>
-        <div class="loading-progress-text"></div>
-    </div>
+  <div id="app">
+    <svg class="loading-progress">
+      <circle r="40%" cx="50%" cy="50%" />
+      <circle r="40%" cx="50%" cy="50%" />
+    </svg>
+    <div class="loading-progress-text"></div>
+  </div>
 
-    <div id="blazor-error-ui">
-        An unhandled error has occurred.
-        <a href="." class="reload">Reload</a>
-        <span class="dismiss">🗙</span>
-    </div>
-    <script src="_framework/blazor.webassembly.js"></script>
-    <script>
-      // TODO: Update in the FLuentUI-Blazor library.
-      (function waitForTheme() {
-        if (window.Blazor && Blazor.theme && typeof Blazor.theme.setLightTheme === "function") {
-          console.log("Force the Light theme.");
-          Blazor.theme.setLightTheme();
-        } else {
-          setTimeout(waitForTheme, 50);
-        }
-      })();
+  <div id="blazor-error-ui">
+    An unhandled error has occurred.
+    <a href="." class="reload">Reload</a>
+    <span class="dismiss">🗙</span>
+  </div>
+  <script src="_framework/blazor.webassembly.js"></script>
+  <script>
+    // TODO: Update in the FLuentUI-Blazor library.
+    (function waitForTheme() {
+      if (window.Blazor && Blazor.theme && typeof Blazor.theme.setLightTheme === "function") {
+        console.log("Force the Light theme.");
+        Blazor.theme.setLightTheme();
+      } else {
+        setTimeout(waitForTheme, 50);
+      }
+    })();
 
-      // Used to open an URL in a new tab
-      window.openInNewTab = function (url) {
-        window.open(url, '_blank', 'noopener');
-      };
+    // Used to open an URL in a new tab
+    window.openInNewTab = function (url) {
+      window.open(url, '_blank', 'noopener');
+    };
 
-    </script>
+  </script>
 </body>
 
 </html>
