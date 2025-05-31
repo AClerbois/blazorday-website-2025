@@ -40,7 +40,9 @@ public partial class HomePage
         {
             await JSRuntime.InvokeVoidAsync("openInNewTab", url);
         }
-
-        NavigationManager.NavigateTo(url);
+        else
+        {
+            NavigationManager.NavigateTo(url);
+        }
     }
 }

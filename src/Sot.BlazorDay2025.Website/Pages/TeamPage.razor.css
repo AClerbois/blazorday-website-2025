@@ -9,11 +9,15 @@
   box-shadow: var(--shadow8);
   padding: 24px 4px 4px 4px;
   margin: 12px;
-  width: 400px;
-  height: 330px;
+  width: min(400px, calc(100dvw - 60px));
+  min-height: 330px;
 }
 
-  .team-member ::deep img {
+  .team-member ::deep fluent-text {
+    text-align: center;
+  }
+
+    .team-member ::deep img {
     border-radius: 63% 37% 30% 70% / 50% 45% 55% 50%;
   }
 

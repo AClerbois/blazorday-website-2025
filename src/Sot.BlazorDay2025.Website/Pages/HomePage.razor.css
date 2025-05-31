@@ -10,7 +10,7 @@
   box-shadow: var(--shadow8);
   padding: 24px;
   margin: 12px;
-  height: 370px;
+  min-height: 370px;
 }
 
   .home-card ::deep fluent-button {
