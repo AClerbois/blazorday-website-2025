@@ -3,16 +3,16 @@
 /* *********************************** */
 
 body {
-  --colorBrandBackground: #745597;
-  --colorBrandBackgroundHover: #B200FF;
-  --colorBrandBackgroundPressed: #401b71;
+  --colorBrandBackground: #4B7B42;
+  --colorBrandBackgroundHover: #264E36;
+  --colorBrandBackgroundPressed: #4B7B42;
   --colorBrandBackgroundSelected: #5a3884;
-  --colorBrandForeground1: #4B1060;
-  --colorNeutralForeground2BrandHover: #B200FF;
-  --colorBrandForegroundLink: #4B1060;
-  --colorBrandForegroundLinkHover: #B200FF;
-  --blazorday-top-bgcolor: #4B1060;
-  --blazorday-color: #731993;
+  --colorBrandForeground1: #333333;
+  --colorNeutralForeground2BrandHover: #264E36;
+  --colorBrandForegroundLink: #264E36;
+  --colorBrandForegroundLinkHover: #264E36;
+  --blazorday-top-bgcolor: #264E36;
+  --blazorday-color: #264E36;
   overflow-x: hidden;
 }
 

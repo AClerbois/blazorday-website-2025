@@ -5,18 +5,46 @@
 }
 
 .banner {
-  background-color: #35326A;
-  background-image: url('/img/banner.png');
+  background-color: #7FBED5;
+  background-image: url('/img/bg-blazorday.png');
   background-repeat: no-repeat;
-  background-size: 1000px;
+  background-size: cover;
+  -moz-background-clip: content-box;
+  -webkit-background-clip: content-box;
+  background-clip: content-box;
+  background-position: left;
   height: 300px;
   text-align: center;
   align-content: center;
 }
 
+  .banner::before {
+    background-image: url('/img/mascotte.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    content: '';
+    width: 250px;
+    height: 250px;
+    position: relative;
+    display: block;
+    z-index: 99;
+    top: 45px;
+    left: 25px;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+  }
+
   .banner ::deep img {
     width: 100%;
     max-width: 800px;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    position: relative;
+    top: -68%;
   }
 
   .banner ::deep .date-text {
@@ -26,7 +54,11 @@
     margin-left: auto;
     width: 300px;
     background-color: rgba(255, 255, 255, 0.8); /* Optional: for contrast */
-    color: #35326A;
+    color: var(--blazorday-color);
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
     font-size: 1.5em;
     font-weight: bold;
     padding: 5px 10px;
@@ -37,10 +69,26 @@
 
 .fluent-layout[mobile] .banner {
   height: 170px;
+  background-image: url('img/bg-blazorday-mobile.png');
 }
 
+  .fluent-layout[mobile] .banner::before {
+    width: 130px;
+    height: 130px;
+    background-position: bottom;
+    top: 25px;
+    left: 20px;
+  }
+
+  .fluent-layout[mobile] .banner ::deep img {
+    margin-left: 50px;
+    margin-right: 50px;
+    width: calc(100% - 100px);
+  }
+
   .fluent-layout[mobile] .banner ::deep .date-text {
-    top: 120px;
+    top: -25px;
+    position: relative;
     transform: rotate(-5deg);
   }
 
