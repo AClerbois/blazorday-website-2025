@@ -4,22 +4,36 @@
     <h1>The online conf about Blazor</h1>
 
     <section>
-        <p style="text-align: center; font-size: larger;">
+        <p style="text-align: center; font-size: larger; padding-bottom: 2.5em;">
             After hitting more than 36K viewers for its first and second edition, <br />
             BlazorDay comes back. With more Blazor rock stars, even more fun and more... <b>Blazor love !</b>
         </p>
-        <br /><br />
     </section>
 
-    <div class="follow-live">
-        <FluentButton Appearance="ButtonAppearance.Primary"
-                      Size="ButtonSize.Large"
-                      Shape="ButtonShape.Circular"
-                      IconStart="@(new Icons.Regular.Size24.VideoLink())"
-                      OnClick="@(async e => await FollowLiveAsync())">
-            Follow live
-        </FluentButton>
-    </div>
+    @if (IsCallForPaperOpen)
+    {
+        <div class="call-for-paper">
+            <FluentButton Appearance="ButtonAppearance.Primary"
+                          Size="ButtonSize.Large"
+                          Shape="ButtonShape.Circular"
+                          IconStart="@(new Icons.Regular.Size24.MicLink())"
+                          OnClick="@(async e => await CallForPaperAsync())">
+                Call for Paper
+            </FluentButton>
+        </div>
+    }
+    else
+    {
+        <div class="follow-live">
+            <FluentButton Appearance="ButtonAppearance.Primary"
+                          Size="ButtonSize.Large"
+                          Shape="ButtonShape.Circular"
+                          IconStart="@(new Icons.Regular.Size24.VideoLink())"
+                          OnClick="@(async e => await FollowLiveAsync())">
+                Follow live
+            </FluentButton>
+        </div>
+    }
 
     <div class="home-main-card">
         <h2>
@@ -29,12 +43,14 @@
 
         <section>
             <p style="text-align: center; font-size: larger;">
-                <b>The Blazor Day Adventure</b><br />
-                <br /><br />
+                <b>The Blazor Day Adventure</b>
+            </p>
+            <p style="text-align: center; font-size: larger;">
                 <b>Blazor Day</b> is an online event dedicated to Blazor technologies.<br />
                 Originally launched by three MVP friends (Adrien, Christophe, and Denis) <br />
                 this event was created to share their passion for .NET, and especially for <b>Blazor</b>.
-                <br /><br />
+            </p>
+            <p style="text-align: center; font-size: larger;">
                 Blazor is part of the <a href="https://learn.microsoft.com/aspnet/core/blazor/" target="_blank">ASP.NET Core framework</a>
                 and is offered as an <a href="https://github.com/dotnet/aspnetcore/" target="_blank">open-source project</a> by Microsoft.
             </p>
@@ -49,12 +65,15 @@
                     BlazorDay 2020
                 </FluentText>
                 <FluentText>
-                    <div style="font-weight: bolder;">Relive the First Edition of BlazorDay!</div><br /><br />
-
-                    Our very first BlazorDay was an unforgettable celebration of the Blazor community. During this edition, we had the privilege of welcoming some of the biggest
-                    names in the ecosystem—rock stars like Daniel Roth, Ed Charbeneau, Chris Sainty, Bruno Barrette, Ahmad Mozaffar, and many others.
-                    <br />
-                    Whether it was an afternoon or an evening depending on your time zone, we came together live to mark the first anniversary of BlazorDay with passion, learning, and a shared love for Blazor.
+                    <div style="font-weight: bolder; padding-bottom:2em;">
+                        Relive the First Edition of BlazorDay!
+                    </div>
+                    <p>
+                        Our very first BlazorDay was an unforgettable celebration of the Blazor community. During this edition, we had the privilege of welcoming some of the biggest
+                        names in the ecosystem—rock stars like Daniel Roth, Ed Charbeneau, Chris Sainty, Bruno Barrette, Ahmad Mozaffar, and many others.
+                        <br />
+                        Whether it was an afternoon or an evening depending on your time zone, we came together live to mark the first anniversary of BlazorDay with passion, learning, and a shared love for Blazor.
+                    </p>
                 </FluentText>
                 <FluentSpacer Orientation="Orientation.Vertical" />
                 <FluentButton Appearance="ButtonAppearance.Transparent"
@@ -70,10 +89,13 @@
                     BlazorDay 2021
                 </FluentText>
                 <FluentText>
-                    <div style="font-weight: bolder;">Relive the Energy of BlazorDay – Second Edition!</div><br /><br />
-                    Following the success of our inaugural event, the second edition of BlazorDay brought even more excitement, insights, and community spirit.
-                    This time, we were thrilled to welcome new stars to the lineup—exceptional speakers who helped elevate the experience to new heights.
-
+                    <div style="font-weight: bolder; padding-bottom:2em;">
+                        Relive the Energy of BlazorDay – Second Edition!
+                    </div>
+                    <p>
+                        Following the success of our inaugural event, the second edition of BlazorDay brought even more excitement, insights, and community spirit.<br />
+                        This time, we were thrilled to welcome new stars to the lineup—exceptional speakers who helped elevate the experience to new heights.
+                    </p>
                 </FluentText>
                 <FluentSpacer Orientation="Orientation.Vertical" />
                 <FluentButton Appearance="ButtonAppearance.Transparent"
