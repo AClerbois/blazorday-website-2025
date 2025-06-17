@@ -5,10 +5,13 @@
 }
 
 .banner {
-  background-color: #35326A;
+  background-color: #7FBED5;
   background-image: url('/img/bg-blazorday.png');
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: cover;
+  -moz-background-clip: content-box;
+  -webkit-background-clip: content-box;
+  background-clip: content-box;
   background-position: left;
   height: 300px;
   text-align: center;
@@ -66,6 +69,7 @@
 
 .fluent-layout[mobile] .banner {
   height: 170px;
+  background-image: url('img/bg-blazorday-mobile.png');
 }
 
   .fluent-layout[mobile] .banner::before {
