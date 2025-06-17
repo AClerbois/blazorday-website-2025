@@ -19,7 +19,7 @@
     color: var(--colorNeutralForeground2Link);
   }
 
-.follow-live {
+.follow-live, .call-for-paper {
   text-align: center;
   padding: 24px;
 }

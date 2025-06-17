@@ -12,6 +12,11 @@ public class DataBase
     /// </summary>
     public string LiveUrl = "https://www.youtube.com/live/4xDzrJKXOOY";
 
+    /// <summary>
+    /// URL to the Call for Paper page
+    /// </summary>
+    public string CallForPaperUrl = "https://sessionize.com/blazor-day-2025/";
+
     /// <summary />
     public IEnumerable<Speaker> Speakers { get; set; } =
     [

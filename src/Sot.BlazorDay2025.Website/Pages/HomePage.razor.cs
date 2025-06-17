@@ -13,6 +13,9 @@ namespace Sot.BlazorDay2025.Website.Pages;
 public partial class HomePage
 {
     private static readonly Icon OpenIcon = new Microsoft.FluentUI.AspNetCore.Components.Icons.Regular.Size20.Open();
+    private static readonly DateTime CallForPaperDeadline = new(2025, 8, 1);
+
+    private static bool IsCallForPaperOpen => DateTime.UtcNow.Date <= CallForPaperDeadline;
 
     /// <summary />
     [Inject]
@@ -29,6 +32,11 @@ public partial class HomePage
     private async Task FollowLiveAsync()
     {
         await JSRuntime.InvokeVoidAsync("openInNewTab", DataBase.LiveUrl);
+    }
+
+    private async Task CallForPaperAsync()
+    {
+        await JSRuntime.InvokeVoidAsync("openInNewTab", DataBase.CallForPaperUrl);
     }
 
     /// <summary>
