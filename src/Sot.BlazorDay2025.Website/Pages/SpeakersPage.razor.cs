@@ -22,5 +22,5 @@ public partial class SpeakersPage
     public required DataBase DataBase { get; set; }
 
     /// <summary />
-    private IEnumerable<Speaker> Speakers => DataBase.Speakers.OrderBy(i => i.Name, StringComparer.Ordinal);
+    private IEnumerable<Speaker> Speakers => DataBase.Speakers.OrderBy(i => i.Order);
 }
