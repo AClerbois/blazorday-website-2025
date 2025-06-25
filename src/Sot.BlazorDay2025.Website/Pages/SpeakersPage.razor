@@ -8,7 +8,7 @@
     {
         <FluentGrid Spacing="4">
 
-            @foreach (var speaker in Speakers.OrderBy(i => i.Order))
+            @foreach (var speaker in Speakers)
             {
                 <FluentGridItem Xs="12" Sm="6" Md="4" Lg="3">
                     <SpeakerCard Id="@speaker.Id" />
