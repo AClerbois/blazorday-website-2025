@@ -1,6 +1,6 @@
 ﻿@inherits LayoutComponentBase
 
-<div>
+<div @key="@(DataBase.PreviewMode ? "PREVIEW" : null)">
     <FluentLayout>
         <!-- Header -->
         <FluentLayoutItem Area="@LayoutArea.Header" Sticky="true" Style="background-color: var(--blazorday-top-bgcolor);">
@@ -23,7 +23,7 @@
 
         <!-- Content -->
         <FluentLayoutItem Area="@LayoutArea.Content" Style="overflow-x: hidden; overflow-y: scroll;">
-            <div class="banner">
+            <div class="banner" @ondblclick="@(e => SwitchPreviewMode(e))">
                 <div class="date-text">September 25, 2025</div>
                 <img src="/img/blazor-day.png" alt="Blazor Day" />
             </div>
@@ -33,7 +33,7 @@
         </FluentLayoutItem>
 
         <!-- Footer -->
-        <FluentLayoutItem Area="@LayoutArea.Footer" Sticky="false" Style="display: flex;">
+        <FluentLayoutItem Area="@LayoutArea.Footer" Sticky="false" Style="display: flex" preview="@DataBase.PreviewMode">
             <div class="footer-copy">
                 &copy; BlazorDay Team - 2025
             </div>

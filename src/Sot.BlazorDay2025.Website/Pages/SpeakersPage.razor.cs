@@ -22,14 +22,5 @@ public partial class SpeakersPage
     public required DataBase DataBase { get; set; }
 
     /// <summary />
-    public IEnumerable<Speaker> Speakers => DataBase.Speakers.OrderBy(i => i.Name, StringComparer.Ordinal);
-
-    /// <summary>
-    /// Display the speaker detail page
-    /// </summary>
-    internal async Task OpenSpeakerDetailAsync(string id)
-    {
-        NavigationManager.NavigateTo($"/speakers/{id}");
-        await Task.CompletedTask;
-    }
+    private IEnumerable<Speaker> Speakers => DataBase.Speakers.OrderBy(i => i.Order);
 }

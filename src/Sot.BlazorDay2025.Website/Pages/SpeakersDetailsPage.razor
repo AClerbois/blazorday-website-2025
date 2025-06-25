@@ -1,8 +1,66 @@
 ﻿@page "/speakers/{Id}"
 
 <div>
-    <h1>Speaker Details</h1>
 
-    @Speaker?.Name
+    <FluentStack Margin="@Margin.Vertical6">
+        <FluentSpacer />
+        <FluentAnchorButton Appearance="ButtonAppearance.Subtle"
+                            IconStart="@(new Icons.Regular.Size20.ArrowStepBack())"
+                            Href="/speakers">
+            All speakers
+        </FluentAnchorButton>
+    </FluentStack>
+
+    @if (Speaker is null)
+    {
+        <FluentText>I think you've found a bug: this speaker is not known to our event.</FluentText>
+    }
+
+    else
+    {
+        <FluentGrid>
+            <FluentGridItem Xs="12" Md="3">
+                <FluentImage Source="@Speaker.PhotoUrl"
+                             Fit="ImageFit.Contain"
+                             Shape="ImageShape.Circular"
+                             Width="200px"
+                             Height="200px" />
+            </FluentGridItem>
+            <FluentGridItem Xs="12" Md="9">
+                <FluentStack Orientation="Orientation.Vertical">
+
+                    <FluentText Weight="TextWeight.Bold" Size="TextSize.Size700" Color="Color.Custom" CustomColor="var(--blazorday-color)">
+                        @Speaker.Name
+                    </FluentText>
+
+                    <FluentText Weight="TextWeight.Bold" Color="Color.Custom" CustomColor="var(--blazorday-color)">
+                        @Speaker.Company
+                    </FluentText>
+
+                    <FluentText Weight="TextWeight.Bold" Margin="@Margin.Vertical4">
+                        @Speaker.Title
+                    </FluentText>
+
+                    <FluentText Style="text-align: justify;" Margin="@Margin.Bottom4">
+                        @Speaker.Description
+                    </FluentText>
+
+                    <FluentStack>
+                        <FluentLink Href="@Speaker.Linkedin" Target="LinkTarget.Blank" Class="speaker-link" Margin="@Margin.Vertical1">
+                            <img src="/img/logo-linkedin.png" alt="linkedin" style="width: 18px;" />
+                            LinkedIn
+                        </FluentLink>
+
+                        <FluentSpacer />
+
+                        <FluentLink Href="@Speaker.WebSite" Target="LinkTarget.Blank" Class="speaker-link" Margin="@Margin.Vertical1">
+                            <img src="/img/logo-web.png" alt="Web site" style="width: 18px;" />
+                            Web site
+                        </FluentLink>
+                    </FluentStack>
+                </FluentStack>
+            </FluentGridItem>
+        </FluentGrid>
+    }
 
 </div>
