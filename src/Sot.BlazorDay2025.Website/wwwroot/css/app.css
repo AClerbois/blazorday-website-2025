@@ -22,6 +22,44 @@ h1, h2, h3, h4, h5, h6 {
   text-align: center;
 }
 
+/* Preview Mode */
+
+.fluent-layout-item[area="footer"][preview] {
+    background-color: darkred;
+    color: white;
+}
+
+.fluent-layout-item[area="footer"][preview] a {
+    color: white;
+}
+
+  /* Ellipsis */
+  .ellipsis {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+  }
+
+.ellipsis-centered {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+  text-align: center;
+}
+
+.ellipsis-multiline-6 {
+  display: -webkit-box;
+  -webkit-line-clamp: 6;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  height: 125px;
+  max-height: 125px;
+}
+
+
 /* ************************* */
 /*    Blazor                 */
 /* ************************* */

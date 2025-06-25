@@ -1,0 +1,43 @@
+﻿<FluentCard Width="@Width" Height="@Height">
+    @if (Speaker is null)
+    {
+        <FluentSkeleton Pattern="SkeletonPattern.IconTitleContent" Width="100%" Height="100%" />
+    }
+    else
+    {
+        <FluentStack Orientation="Orientation.Vertical" HorizontalAlignment="HorizontalAlignment.Center">
+            <FluentText Weight="TextWeight.Bold" Size="TextSize.Size500" Class=".ellipsis-centered" Color="Color.Custom" CustomColor="var(--blazorday-color)">
+                @Speaker.Name
+            </FluentText>
+
+            <FluentText Weight="TextWeight.Bold" Style="height: 30px;" Class="ellipsis-centered">
+                @Speaker.Company
+            </FluentText>
+
+            <FluentImage Source="@Speaker.PhotoUrl"
+                         Fit="ImageFit.Contain"
+                         Shape="ImageShape.Circular"
+                         Width="@($"calc({Width} - 40px)")"
+                         Height="@($"calc({Width} - 40px)")"
+                         Style="cursor: pointer;"
+                         @onclick="@(async e => await OpenSpeakerDetailAsync(Speaker.Id))" />
+
+            <FluentText Weight="TextWeight.Bold" Margin="@Margin.Vertical1" Class="ellipsis-centered" Style="height: 25px;">
+                @Speaker.Title
+            </FluentText>
+
+
+
+            <FluentText Margin="@Margin.Vertical2" Class="ellipsis-multiline-6">
+                @Speaker.Description
+            </FluentText>
+
+            <FluentButton Appearance="ButtonAppearance.Transparent"
+                          Style="align-self: end;"
+                          IconStart="@(new Icons.Regular.Size20.Open())"
+                          IconOnly="true"
+                          Tooltip="@($"Go to {Speaker.Name}'s detailed page")"
+                          OnClick="@(async e => await OpenSpeakerDetailAsync(Speaker.Id))" />
+        </FluentStack>
+    }
+</FluentCard>
