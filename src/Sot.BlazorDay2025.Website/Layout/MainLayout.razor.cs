@@ -39,4 +39,10 @@ public partial class MainLayout
             DataBase.PreviewMode = !DataBase.PreviewMode;
         }
     }
+
+    private async Task ReplayHomeAnimationAsync()
+    {
+        await DataBase.SaveShowAnimationAsync(true);
+        StateHasChanged();
+    }
 }
