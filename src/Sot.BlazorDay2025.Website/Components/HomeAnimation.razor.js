@@ -332,7 +332,10 @@ export async function initialize_animation() {
   });
 
   // Start
-  document.getElementById("intro").style.display = "block";
+  const intro = document.getElementById("intro");
+  if (intro) {
+    intro.style.display = "block";
+  }
 
   setTimeout(() => {
     ScrollTrigger.refresh();

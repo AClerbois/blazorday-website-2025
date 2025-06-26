@@ -45,9 +45,9 @@ public partial class HomeAnimation
     }
 
     /// <summary />
-    private void SkipAnimation()
+    private async Task SkipAnimationAsync()
     {
-        DataBase.ShowAnimation = false;
+        await DataBase.SaveShowAnimationAsync(false);
         NavigationManager.NavigateTo("/");
     }
 }

@@ -20,6 +20,18 @@ public partial class MainLayout
     private FluentLayoutHamburger? _hamburger;
 
     /// <summary />
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            await DataBase.LoadShowAnimationAsync();
+            StateHasChanged();
+        }
+
+        await base.OnAfterRenderAsync(firstRender);
+    }
+
+    /// <summary />
     private void SwitchPreviewMode(MouseEventArgs e)
     {
         if (e.CtrlKey)
