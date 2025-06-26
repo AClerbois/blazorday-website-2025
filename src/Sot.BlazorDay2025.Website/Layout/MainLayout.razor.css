@@ -37,15 +37,19 @@
     user-select: none;
   }
 
-  .banner ::deep img {
+  .banner::after {
+    background-image: url(/img/blazor-day.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    content: '';
     width: 100%;
-    max-width: 800px;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    -webkit-user-select: none;
-    user-select: none;
+    max-width: min(80%, 800px);
     position: relative;
+    display: block;
+    z-index: 9;
     top: -68%;
+    left: 20%;
+    height: 100%;
   }
 
   .banner ::deep .date-text {
@@ -78,7 +82,7 @@
     height: 130px;
     background-position: bottom;
     top: 25px;
-    left: 20px;
+    left: -15px;
   }
 
   .fluent-layout[mobile] .banner ::deep img {
