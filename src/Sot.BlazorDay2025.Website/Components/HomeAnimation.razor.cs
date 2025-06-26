@@ -40,12 +40,13 @@ public partial class HomeAnimation
                 JsModule = await JsRuntime.InvokeAsync<IJSObjectReference>("import", JAVASCRIPT_FILE);
             }
 
-            await JsModule.InvokeVoidAsync("initialize_animation");
+            await JsModule.InvokeVoidAsync("initialize_animation", DotNetObjectReference.Create(this));
         }
     }
 
     /// <summary />
-    private async Task SkipAnimationAsync()
+    [JSInvokable]
+    public async Task SkipAnimationAsync()
     {
         await DataBase.SaveShowAnimationAsync(false);
         NavigationManager.NavigateTo("/");

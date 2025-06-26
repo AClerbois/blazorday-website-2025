@@ -1,5 +1,9 @@
-export async function initialize_animation() {
+let dotNetHelper = null;
+
+export async function initialize_animation(dotNetRef) {
   //Credit - https://isladjan.com/ and customization by me
+
+  dotNetHelper = dotNetRef;
 
   // Helper to load a script if not already loaded
   function loadScript(src, globalVar) {
@@ -296,7 +300,15 @@ export async function initialize_animation() {
             y: document.documentElement.scrollHeight - window.innerHeight
           },
           duration: duration,
-          ease: "none"
+          ease: "none",
+          onComplete: () => {
+            console.log("Animation completed!");
+            setTimeout(() => {
+              if (dotNetHelper) {
+                dotNetHelper.invokeMethodAsync('SkipAnimationAsync');
+              }
+            }, 1000);
+          }
         });
       }
     });
