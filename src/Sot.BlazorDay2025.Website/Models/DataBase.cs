@@ -30,6 +30,11 @@ public class DataBase
     /// </summary>
     public bool PreviewMode { get; set; }
 
+    /// <summary>
+    /// Gets or sets a value indicating whether the home animation should be shown.
+    /// </summary>
+    public bool ShowAnimation { get; set; } = true;
+
     /// <summary />
     public IEnumerable<Speaker> Speakers { get; set; } =
     [

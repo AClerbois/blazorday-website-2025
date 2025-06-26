@@ -1,5 +1,11 @@
 ﻿@inherits LayoutComponentBase
 
+@if (DataBase.ShowAnimation)
+{
+    <HomeAnimation />
+    return;
+}
+
 <div @key="@(DataBase.PreviewMode ? "PREVIEW" : null)">
     <FluentLayout>
         <!-- Header -->
@@ -51,3 +57,4 @@
 
 @* Add all FluentUI Blazor Providers *@
 <FluentProviders />
+
