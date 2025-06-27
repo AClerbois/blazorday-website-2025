@@ -25,7 +25,7 @@ else
                          Height="@($"calc({Height} - {ImageMarginTop})")"
                          Margin="@($"{ImageMarginTop} 0 0 0")" />
 
-            <FluentStack Orientation="Orientation.Vertical" VerticalAlignment="VerticalAlignment.Center" Height="@Height" Class="session-card-content">
+            <FluentStack Orientation="Orientation.Vertical" VerticalAlignment="VerticalAlignment.Center" Style="@($"min-height: {Height};")" Class="session-card-content">
                 <FluentText Weight="TextWeight.Bold" Size="TextSize.Size500">
                     @Session.Title
                 </FluentText>
