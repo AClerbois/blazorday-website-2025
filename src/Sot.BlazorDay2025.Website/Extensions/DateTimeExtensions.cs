@@ -10,6 +10,18 @@ namespace Sot.BlazorDay2025.Website.Extensions;
 public static class DateTimeExtensions
 {
     /// <summary>
+    /// Calculates the starting time for a specified time slot based on the given slot duration.
+    /// </summary>
+    /// <param name="dateTime">The base <see cref="DateTimeOffset"/> from which the slot calculation begins.</param>
+    /// <param name="slot">The slot number to calculate the starting time for. Must be a non-negative integer.</param>
+    /// <param name="slotDuration">The duration of each slot, in minutes. Defaults to 30 minutes if not specified.</param>
+    /// <returns>A <see cref="DateTimeOffset"/> representing the starting time of the specified slot.</returns>
+    public static DateTimeOffset ForSlot(this DateTimeOffset dateTime, int slot, int slotDuration = Models.DataBase.SlotDuration)
+    {
+        return dateTime.AddMinutes((slot - 1) * slotDuration);
+    }
+
+    /// <summary>
     /// Adds the specified number of hours and minutes to the given <see cref="DateTimeOffset"/> value.
     /// </summary>
     /// <remarks>This method calculates the total time to add by converting the hours to minutes and then
@@ -37,7 +49,7 @@ public static class DateTimeExtensions
     /// minutes.</returns>
     /// <exception cref="FormatException">Thrown if the <paramref name="time"/> string is not in the "HH:MM" format, or if the hours or minutes components
     /// are invalid.</exception>
-    public static DateTimeOffset AddTime(this DateTimeOffset dateTime, string time)
+    public static DateTimeOffset ForTime(this DateTimeOffset dateTime, string time)
     {
         var parts = time.Split(':');
         if (parts.Length != 2)
@@ -55,6 +67,7 @@ public static class DateTimeExtensions
             throw new FormatException("Invalid minutes component in time string.");
         }
 
-        return dateTime.AddMinutes(60 * hours + minutes);
+        var date = new DateTimeOffset(dateTime.Year, dateTime.Month, dateTime.Day, 0, 0, 0, dateTime.Offset);
+        return date.AddMinutes(60 * hours + minutes);
     }
 }

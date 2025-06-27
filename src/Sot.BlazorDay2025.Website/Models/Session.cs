@@ -22,7 +22,7 @@ public record Session
     public required DateTimeOffset Time { get; set; }
 
     /// <summary />
-    public required int Duration { get; set; } = 30;        // Default to 30 minutes
+    public required int Duration { get; set; } = DataBase.SlotDuration;        // Default to 30 minutes
 
     /// <summary />
     public required string Title { get; set; }

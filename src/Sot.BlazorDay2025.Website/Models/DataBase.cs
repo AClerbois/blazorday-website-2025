@@ -12,12 +12,18 @@ namespace Sot.BlazorDay2025.Website.Models;
 [System.Diagnostics.CodeAnalysis.SuppressMessage("Design", "MA0051:Method is too long", Justification = "Required to fill all data items")]
 public class DataBase
 {
+    private const string CrLf = "\r\n";
     private readonly IJSRuntime _jsRuntime;
 
     /// <summary>
     /// Gets or sets the date (without time) of the event.
     /// </summary>
-    public static DateTimeOffset EventDateUtc { get; } = new DateTimeOffset(2025, 9, 25, 0, 0, 0, TimeSpan.Zero);  // 2025-09-25
+    public static DateTimeOffset EventDateUtc { get; } = new DateTimeOffset(2025, 9, 25, 15, 0, 0, TimeSpan.Zero);  // 2025-09-25 - 15:00 UTC
+
+    /// <summary>
+    /// Duration of each time slot in minutes
+    /// </summary>
+    public const int SlotDuration = 30;
 
     /// <summary />
     public DataBase(IJSRuntime jsRuntime)
@@ -63,7 +69,7 @@ public class DataBase
             Name = "Daniel Roth",
             Title = "",
             Company = "Microsoft",
-            Description = "Daniel Roth is a Principal Product Manager for ASP.NET Core & Blazor on the .NET team at Microsoft.",
+            Description = @$"Daniel Roth is a Principal Product Manager for ASP.NET Core & Blazor on the .NET team at Microsoft.",
             Email = "Daniel.Roth@microsoft.com",
             Linkedin = "https://linkedin.com/in/danroth27/",
             PhotoUrl = "/img/speakers/daniel-roth.jpg",
@@ -76,7 +82,14 @@ public class DataBase
             Name = "Ed Charbeneau",
             Title = "Ed is a Microsoft MVP and an international speaker, writer, online influencer, a Developer Advocate for Progress.",
             Company = "Telerik.com",
-            Description = "Ed is a Microsoft MVP and an international speaker, writer, online influencer, a Developer Advocate for Progress, and expert on all things web development. Ed enjoys geeking out to cool new tech, brainstorming about future technology, and admiring great design.\r\n\r\nEd has shared his insights, experiences, and advice around collaboration, knowledge management, social computing, and training at many industry events around the United States. Highly ethical and engaging with an uncanny business acumen, he is a creative community builder and outside the box thinker. Long term business relationships throughout the world within internal communications, employee engagement and marketing as well as IT. Focusing on Financial, Healthcare, Manufacturing, Agency and Professional Services. He has defined, architected, implemented line of business solutions with a touch of style and UX best practices.",
+            Description = @$"Ed is a Microsoft MVP and an international speaker, writer, online influencer, a Developer Advocate for Progress,
+                             and expert on all things web development. Ed enjoys geeking out to cool new tech, brainstorming
+                             about future technology, and admiring great design.{CrLf}{CrLf}Ed has shared his insights, experiences, and advice around
+                             collaboration, knowledge management, social computing, and training at many industry events around the United States.
+                             Highly ethical and engaging with an uncanny business acumen, he is a creative community builder and outside the box thinker.
+                             Long term business relationships throughout the world within internal communications, employee engagement and marketing
+                             as well as IT. Focusing on Financial, Healthcare, Manufacturing, Agency and Professional Services. He has defined,
+                             architected, implemented line of business solutions with a touch of style and UX best practices.",
             Email = "ed.charbeneau@gmail.com",
             Linkedin = "https://www.linkedin.com/in/edcharbeneau/",
             WebSite = "https://edcharbeneau.com/",
@@ -90,7 +103,11 @@ public class DataBase
             Name = "Vincent Baaij",
             Title = "Fluent UI Blazor library maintainer",
             Company = "",
-            Description = "Vincent has been working as a developer/consultant/architect in the IT industry for over almost 30 years and is still learning new things every day. He currently works as a Cloud Solution Architect at Microsoft where he helps customers to be successful on the Azure platform. He is also the maintainer of the official Microsoft Fluent UI Blazor library, an open-source component package that offers seamless integration of Fluent UI with Blazor for building web and mobile applications.",
+            Description = @$"Vincent has been working as a developer/consultant/architect in the IT industry
+                             for over almost 30 years and is still learning new things every day. He currently works as a Cloud Solution
+                             Architect at Microsoft where he helps customers to be successful on the Azure platform. He is also
+                             the maintainer of the official Microsoft Fluent UI Blazor library, an open-source component package that
+                             offers seamless integration of Fluent UI with Blazor for building web and mobile applications.",
             Email = "vnbaaij@outlook.com",
             Linkedin = "https://www.linkedin.com/in/vincentbaaij/",
             WebSite = "https://baaijte.net/",
@@ -148,21 +165,42 @@ public class DataBase
     [
         new Session(this)
         {
-            Id = "1",
-            Time = EventDateUtc.AddTime("16:00"),
-            Duration = 30,
-            Title = "Keynote: The Future of Blazor",
-            Description = "Join us for the keynote session where we will explore the future of Blazor and its impact on web development.",
+            Id = "roth",
+            Time = EventDateUtc.ForSlot(1),
+            Duration = DataBase.SlotDuration,
+            Title = "The future of web development with ASP.NET Core & Blazor",
+            Description = @$"Explore the future of web development with ASP.NET Core & Blazor in .NET 10,
+                             including major improvements for security, observability & diagnostics, performance,
+                             and productivity.{CrLf}{CrLf}We’ll look at the new support for Blazor state persistence,
+                             new Blazor diagnostics, startup performance improvements, validation for minimal APIs & Blazor,
+                             OpeWebAuthn & Passkey support, enhanced authentication tooling, and much more!",
             SpeakerIds = ["daniel-roth"],
         },
         new Session(this)
         {
-            Id = "2",
-            Time = EventDateUtc.AddTime("17:00"),
-            Duration = 30,
-            Title = "Building Modern Web Apps with Blazor",
-            Description = "Learn how to build modern web applications using Blazor and its powerful features.",
-            SpeakerIds = ["ed-charbeneau", "vincent-baaij"],
+            Id = "baaij",
+            Time = EventDateUtc.ForSlot(2),
+            Duration = DataBase.SlotDuration,
+            Title = "Exploring the Fluent UI Blazor Library v5: Next-Gen Web Components and Architectural Innovations",
+            Description = @$"Join me for an in-depth session on the upcoming new major version of the Fluent UI Blazor library. It introduces cutting-edge new (Fluent) Web Components and significant architectural changes.
+                             This session will cover:
+                             {CrLf}- **Overview of New Features**: Discover the enhancements in the new Fluent UI Blazor library, including updated Web Components
+                             {CrLf}- **Architectural Changes**: Learn about the major architectural shifts that improve performance, scalability, and maintainability.
+                             {CrLf}- **Migration Guide**: Yes, there will be a lot of breaking changes! But we will guide you with practical tips and best practices for migrating your existing projects to the new version
+                             {CrLf}- **Hands-On Demos**: See the new features in action with live coding demonstrations.",
+            SpeakerIds = ["vincent-baaij"],
+        },
+        new Session(this)
+        {
+            Id = "charbeneau",
+            Time = EventDateUtc.ForSlot(3),
+            Duration = DataBase.SlotDuration,
+            Title = "Designing for AI First: Natural Language UX with Blazor",
+            Description = @$"Natural Language is the new default user experience. In this session, we’ll explore what it means to design
+                             for an AI First UX—where AI isn’t an add-on, but a central part of the experience.
+                             You’ll see how to build intelligent, natural-language-driven interfaces using Blazor,
+                             and discover the tools and services that can bring your next AI-powered application to life.",
+            SpeakerIds = ["ed-charbeneau"],
         },
     ];
 
