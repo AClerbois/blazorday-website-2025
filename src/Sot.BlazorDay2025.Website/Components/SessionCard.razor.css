@@ -1,0 +1,19 @@
+::deep .session-card-content {
+  background-color: var(--colorBrandBackground);
+  color: var(--colorNeutralBackground1);
+  border-radius: 30px 4px 4px 30px;
+  padding-left: 30px;
+  margin-left: -15px;
+}
+
+body[data-media='xs'] div ::deep .session-card-content {
+  --fontSizeBase500: 14px;
+  --lineHeightBase500: 16px;
+  --fontSizeBase300: 10px;
+  --lineHeightBase300: 11px;
+}
+
+
+body[data-media='xs'] div ::deep .session-card-photo {
+  display: none;
+}

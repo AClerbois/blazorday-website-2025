@@ -3,6 +3,7 @@
   justify-self: center;
   max-width: 1140px;
   width: 100%;
+  min-height: calc(100vh - 380px);
 }
 
 .banner {
