@@ -61,6 +61,7 @@ public partial class SessionCard
     /// <summary />
     public async Task OpenSessionDetailAsync()
     {
+        NavigationManager.NavigateTo($"/schedule/{Session?.Id ?? ""}");
         await Task.CompletedTask;
     }
 }
