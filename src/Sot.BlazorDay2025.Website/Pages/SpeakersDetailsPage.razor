@@ -1,4 +1,5 @@
 ﻿@page "/speakers/{Id}"
+@using Sot.BlazorDay2025.Website.Extensions
 
 <div>
 
@@ -42,7 +43,7 @@
                     </FluentText>
 
                     <FluentText Style="text-align: justify;" Margin="@Margin.Bottom4">
-                        @Speaker.Description
+                        @Speaker.Description.FormatMarkdown()
                     </FluentText>
 
                     <FluentStack>

@@ -1,0 +1,43 @@
+﻿@{
+    const string ImageMarginTop = "4px";
+}
+
+@if (Session is null)
+{
+    <FluentSkeleton Pattern="SkeletonPattern.IconTitle" Width="100%" Height="50px" />
+}
+else
+{
+    <div style="cursor: pointer;" @onclick="@OpenSessionDetailAsync">
+        <FluentStack VerticalAlignment="VerticalAlignment.Center" Margin="@Margin.Vertical3">
+
+            <FluentStack Orientation="Orientation.Vertical" VerticalAlignment="VerticalAlignment.Center" Height="@Height" Width="@Height">
+                <FluentText Size="TextSize.Size400" Weight="TextWeight.Semibold">
+                    @SessionLocalTime
+                </FluentText>
+            </FluentStack>
+
+            <FluentImage Source="@Speaker?.PhotoUrl"
+                         Fit="ImageFit.Contain"
+                         Class="session-card-photo"
+                         Shape="ImageShape.Circular"
+                         Width="@($"calc({Height} - {ImageMarginTop})")"
+                         Height="@($"calc({Height} - {ImageMarginTop})")"
+                         Margin="@($"{ImageMarginTop} 0 0 0")" />
+
+            <FluentStack Orientation="Orientation.Vertical" VerticalAlignment="VerticalAlignment.Center" Style="@($"min-height: {Height};")" Class="session-card-content">
+                <FluentText Weight="TextWeight.Bold" Size="TextSize.Size500">
+                    @Session.Title
+                </FluentText>
+                <FluentStack VerticalAlignment="VerticalAlignment.Bottom" Margin="@Margin.Vertical2">
+                    <FluentText Size="TextSize.Size300">
+                        @Speaker?.Name
+                    </FluentText>
+                    <FluentSpacer />
+                    <FluentIcon Value="@OpenIcon" Color="@Color.Lightweight" Margin="@Margin.Right2" />
+                </FluentStack>
+            </FluentStack>
+
+        </FluentStack>
+    </div>
+}

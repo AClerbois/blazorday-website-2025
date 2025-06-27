@@ -7,6 +7,14 @@ namespace Sot.BlazorDay2025.Website.Models;
 /// <summary />
 public class TeamMember
 {
+    private readonly DataBase _dataBase;
+
+    /// <summary />
+    internal TeamMember(DataBase database)
+    {
+        _dataBase = database;
+    }
+
     /// <summary />
     public required string Name { get; set; }
 

@@ -1,4 +1,5 @@
-﻿<FluentCard Width="@Width" Height="@Height">
+﻿@using Sot.BlazorDay2025.Website.Extensions
+<FluentCard Width="@Width" Height="@Height">
     @if (Speaker is null)
     {
         <FluentSkeleton Pattern="SkeletonPattern.IconTitleContent" Width="100%" Height="100%" />
@@ -27,7 +28,7 @@
             </FluentText>
 
             <FluentText Margin="@Margin.Vertical2" Class="ellipsis-multiline-6" Style="text-align: justify;">
-                @Speaker.Description
+                @Speaker.Description.FormatMarkdown()
             </FluentText>
 
             <FluentButton Appearance="ButtonAppearance.Transparent"

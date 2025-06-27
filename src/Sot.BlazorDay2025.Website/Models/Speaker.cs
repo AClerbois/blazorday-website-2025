@@ -7,6 +7,14 @@ namespace Sot.BlazorDay2025.Website.Models;
 /// <summary />
 public record Speaker
 {
+    private readonly DataBase _dataBase;
+
+    /// <summary />
+    internal Speaker(DataBase database)
+    {
+        _dataBase = database;
+    }
+
     /// <summary />
     public int Order { get; set; } = Random.Shared.Next(int.MaxValue - 99999, int.MaxValue);
 
