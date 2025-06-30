@@ -157,7 +157,6 @@ public partial class DataBase
             throw new InvalidOperationException($"Duplicate Speaker Id(s) found: {string.Join(", ", duplicateSpeakerIds)}");
         }
 
-
         // Verify all Session.SpeakerIds exist in Speakers
         var speakerIdSet = new HashSet<string>(Speakers.Select(s => s.Id), StringComparer.Ordinal);
         var missingSpeakerIds = Sessions.SelectMany(session => session.SpeakerIds.Select(id => (SessionId: session.Id, SpeakerId: id)))
