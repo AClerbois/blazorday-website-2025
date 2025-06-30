@@ -29,7 +29,8 @@
 
         <!-- Content -->
         <FluentLayoutItem Area="@LayoutArea.Content" Style="overflow-x: hidden; overflow-y: scroll; display: grid;">
-            <div class="banner" @ondblclick="@(e => SwitchPreviewMode(e))">
+			<div class="banner" @ondblclick="@(e => SwitchPreviewMode(e))"
+				                @onclick="ReplayHomeAnimationAsync">
                 <div class="date-text">September 25, 2025</div>
             </div>
             <div class="content">
