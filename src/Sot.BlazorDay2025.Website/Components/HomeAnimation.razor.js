@@ -37,7 +37,6 @@ export async function initialize_animation(dotNetRef) {
 
   const mm = gsap.matchMedia();
   mm.add("(max-width: 1922px)", () => {
-    //batSound.play(); 
     gsap.set(["#cloudStart-L", "#cloudStart-R"], { x: 10, opacity: 1 });
   });
 
@@ -68,29 +67,28 @@ export async function initialize_animation(dotNetRef) {
   scene1.to("#cloudStart-R", { x: 300 }, 0);
 
   //animate text
-  scene1.to("#info", { y: 8 * speed }, 0);
+  scene1.to("#textStart", { y: 4 * speed }, 0);
 
-  /*   plane   */
-  gsap.fromTo("#planeWrapper",
-    { opacity: 0, x: 0, y: 0 },
-    {
-      opacity: 1,
-      x: 800,
-      y: -250,
-      ease: "power2.out",
-      scrollTrigger: {
-        trigger: ".scrollElement",
-        start: "15% top",
-        end: "60% 100%",
-        scrub: 4,
-        onEnter: () => gsap.to("#bird", { scaleX: 1, rotation: 0 }),
-        onLeave: () => gsap.to("#bird", { scaleX: -1, rotation: -15 })
-      }
+  /* Plane */
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".scrollElement",
+      start: "15% top",
+      end: "60% 100%",
+      scrub: 4
     }
-  );
+  });
+
+  tl.fromTo("#planeWrapper",
+    { opacity: 0, x: 0, y: 0 },
+    { opacity: 0.9, x: 160, y: -50, duration: 0.1, ease: "none" } 
+  )
+    .to("#planeWrapper",
+      { opacity: 1, x: 800, y: -250, duration: 0.8, ease: "power2.out" }
+    );
 
 
-  /* Clouds  */
+  /* Clouds */
   let clouds = gsap.timeline();
   ScrollTrigger.create({
     animation: clouds,
@@ -105,7 +103,7 @@ export async function initialize_animation(dotNetRef) {
   clouds.to("#cloud3", { x: -1000 }, 0);
   clouds.to("#cloud4", { x: -700, y: 25 }, 0);
 
-  /* Sun motion Animation  */
+  /* Sun motion Animation */
   let sun = gsap.timeline();
   ScrollTrigger.create({
     animation: sun,
@@ -237,10 +235,8 @@ export async function initialize_animation(dotNetRef) {
   //stars
   scene3.fromTo("#stars", { opacity: 0 }, { opacity: 0.5, y: -500 }, 0);
 
-  // Scroll Back text
-  scene3.fromTo("#arrow2", { opacity: 0 }, { opacity: 0.7, y: -710 }, 0.25);
-  scene3.fromTo("#text2", { opacity: 0 }, { opacity: 0.7, y: -480 }, 0.3);
-  scene3.to("footer", { opacity: 1 }, 0.3);
+  // Scroll End text
+  scene3.fromTo("#endText", { opacity: 0 }, { opacity: 0.7, y: -710 }, 0.25);
 
   //gradient value change
   scene3.to("#bg2-grad", { attr: { cy: 600 } }, 0);
@@ -278,7 +274,7 @@ export async function initialize_animation(dotNetRef) {
   gsap.fromTo("#stars path:nth-of-type(35)", { opacity: 0.3 }, { opacity: 1, duration: 0.3, repeat: -1, repeatDelay: 2 });
   gsap.fromTo("#stars path:nth-of-type(40)", { opacity: 0.3 }, { opacity: 1, duration: 0.3, repeat: -1, repeatDelay: 0.8 });
   gsap.fromTo("#stars path:nth-of-type(45)", { opacity: 0.3 }, { opacity: 1, duration: 0.3, repeat: -1, repeatDelay: 1.8 });
-  gsap.fromTo("#stars path:nth-of-type(48)", { opacity: 0.3 }, { opacity: 1, duration: 0.3, repeat: -1, repeatDelay: 1 });
+  gsap.fromTo("#stars path:nth-of-type(47)", { opacity: 0.3 }, { opacity: 1, duration: 0.3, repeat: -1, repeatDelay: 1 });
 
   //reset scrollbar position after refresh
   window.onbeforeunload = function () {
@@ -286,15 +282,13 @@ export async function initialize_animation(dotNetRef) {
   };
 
   function autoScrollPageGSAP(duration = 20) {
-    const maxScroll = document.body.scrollHeight - window.innerHeight;
-
     ScrollTrigger.refresh();
 
     gsap.to(window, {
       scrollTo: 1,
       duration: 0.1,
       onComplete: () => {
-        //  Lancement du scroll principal vers le bas de la page
+        // Lancement du scroll principal
         gsap.to(window, {
           scrollTo: {
             y: document.documentElement.scrollHeight - window.innerHeight
@@ -302,42 +296,27 @@ export async function initialize_animation(dotNetRef) {
           duration: duration,
           ease: "none",
           onComplete: () => {
-            console.log("Animation completed!");
-            setTimeout(() => {
-              if (dotNetHelper) {
-                dotNetHelper.invokeMethodAsync('SkipAnimationAsync');
+            const svg = document.querySelector("svg.parallax");
+            gsap.to(svg, {
+              opacity: 0,
+              duration: 0.8,
+              ease: "power1.out",
+              onComplete: () => {
+                document.body.classList.add("fade-out");
+
+                setTimeout(() => {
+                  if (dotNetHelper) {
+                    dotNetHelper.invokeMethodAsync('SkipAnimationAsync');
+                  }
+                }, 500);
               }
-            }, 1000);
+            });
+
           }
         });
       }
     });
   }
-
-  function skipAnimation() {
-    //Arrêter tous les scrollTriggers
-    if (typeof ScrollTrigger !== "undefined") {
-      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
-    }
-
-    //Arrêter toutes les animations GSAP en cours
-    if (typeof gsap !== "undefined") {
-      gsap.killTweensOf("*");
-
-      if (gsap.globalTimeline && typeof gsap.globalTimeline.clear === "function") {
-        gsap.globalTimeline.clear();
-      }
-    }
-
-    document.body.classList.add("fade-out");
-
-    // Wait for the transition to complete (10ms), then redirect
-    setTimeout(() => {
-      window.location.href = "/";
-    }, 10);
-  }
-
-  window.skipAnimation = skipAnimation;
 
   window.addEventListener("DOMContentLoaded", () => {
     document.body.classList.add("fade-in");
@@ -358,4 +337,26 @@ export async function initialize_animation(dotNetRef) {
       autoScrollPageGSAP(25);
     }, 100);
   }, 300);
+
+  function skipAnimation() {
+    //Arrêter tous les scrollTriggers
+    if (typeof ScrollTrigger !== "undefined") {
+      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+    }
+
+    //Arrêter toutes les animations GSAP en cours
+    if (typeof gsap !== "undefined") {
+      gsap.killTweensOf("*");
+
+      if (gsap.globalTimeline && typeof gsap.globalTimeline.clear === "function") {
+        gsap.globalTimeline.clear();
+      }
+    }
+  }
+
+  //window.skipAnimation = skipAnimation;
+
+  document.getElementById("btn-skip").addEventListener("click", function () {
+    skipAnimation();
+  });
 }
