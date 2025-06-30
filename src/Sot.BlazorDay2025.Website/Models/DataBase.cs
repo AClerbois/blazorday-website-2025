@@ -2,14 +2,20 @@
 // MIT License - Copyright (c) BlazorDay 2025. All rights reserved.
 // ------------------------------------------------------------------------
 
+using Microsoft.JSInterop;
+
 namespace Sot.BlazorDay2025.Website.Models;
 
 /// <summary />
 public class DataBase
 {
+    private readonly IJSRuntime _jsRuntime;
+
     /// <summary />
-    public DataBase()
+    public DataBase(IJSRuntime jsRuntime)
     {
+        _jsRuntime = jsRuntime;
+
 #if DEBUG
         PreviewMode = true;
 #endif
@@ -29,6 +35,11 @@ public class DataBase
     /// Gets or sets a value indicating whether the application is in preview mode.
     /// </summary>
     public bool PreviewMode { get; set; }
+
+    /// <summary>
+    /// Gets or sets a value indicating whether the home animation should be shown.
+    /// </summary>
+    public bool ShowAnimation { get; set; }
 
     /// <summary />
     public IEnumerable<Speaker> Speakers { get; set; } =
@@ -153,4 +164,25 @@ public class DataBase
         },
     ];
 
+    /// <summary>
+    /// Call this to load the value from localStorage
+    /// </summary>
+    /// <returns></returns>
+    public async Task<bool> LoadShowAnimationAsync()
+    {
+        var value = await _jsRuntime.InvokeAsync<string>("localStorage.getItem", "ShowAnimation");
+        ShowAnimation = !string.Equals(value, "false", StringComparison.OrdinalIgnoreCase);
+
+        return ShowAnimation;
+    }
+
+    /// <summary>
+    /// Call this to save the value to localStorage
+    /// </summary>
+    /// <returns></returns>
+    public async Task SaveShowAnimationAsync(bool value)
+    {
+        ShowAnimation = value;
+        await _jsRuntime.InvokeVoidAsync("localStorage.setItem", "ShowAnimation", ShowAnimation ? "true" : "false");
+    }
 }
