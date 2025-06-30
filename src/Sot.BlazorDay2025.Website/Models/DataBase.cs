@@ -82,7 +82,7 @@ public partial class DataBase
          new TeamMember(this)
          {
              Name = "Christophe Peugnet",
-             Title = "Microsoft MVP & .NET / Blazor Dev | Formateur",
+             Title = "Microsoft MVP & .NET / Dev Blazor | Blazor Trainer",
              ImageUrl = "/img/team-christophe.jpg",
              LinkedIn = "https://www.linkedin.com/in/christophepeugnet/",
          },
