@@ -169,6 +169,7 @@ public partial class DataBase
             var details = string.Join(", ", missingSpeakerIds.Select(x => $"Session '{x.SessionId}' references missing SpeakerId '{x.SpeakerId}'"));
             throw new InvalidOperationException($"Invalid SpeakerId(s) referenced in Sessions: {details}");
         }
+    }
 
     /// <summary>
     /// Call this to load the value from localStorage
