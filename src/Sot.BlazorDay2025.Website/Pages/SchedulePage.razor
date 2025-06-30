@@ -3,8 +3,27 @@
 <div>
     <h1>Schedule</h1>
 
-    <section>
-        The list of sessions is currently being prepared. Stay tuned for more information!
-    </section>
+    @* Preview mode - To activate after validation *@
+    @if (DataBase.PreviewMode)
+    {
+        <section style="margin-bottom: 24px;">
+            The list of sessions is currently being prepared. Sessions and times are subject to change.
+        </section>
+        <div>
+            @DataBase.BrowserTimeZone (@DataBase.UtcOffset)
+        </div>
 
+        @foreach (var session in Sessions)
+        {
+            <SessionCard Id="@session.Id" />
+        }
+
+        <FluentDivider Margin="24px;">End</FluentDivider>
+    }
+    else
+    {
+        <section>
+            The list of sessions is currently being prepared. Stay tuned for more information!
+        </section>
+    }
 </div>
