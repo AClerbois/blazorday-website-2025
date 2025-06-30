@@ -38,37 +38,51 @@
 </head>
 
 <body>
-  <div id="app">
-    <svg class="loading-progress">
-      <circle r="40%" cx="50%" cy="50%" />
-      <circle r="40%" cx="50%" cy="50%" />
-    </svg>
-    <div class="loading-progress-text"></div>
-  </div>
+    <div id="app">
+        <div class="loading-progress">
+            <svg class="loading-tree" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet">
+                <defs>
+                    <clipPath id="sapin-fill">
+                        <rect class="fill-rect" x="0" y="0" width="100" height="100" />
+                    </clipPath>
+                </defs>
 
-  <div id="blazor-error-ui">
-    An unhandled error has occurred.
-    <a href="." class="reload">Reload</a>
-    <span class="dismiss">🗙</span>
-  </div>
-  <script src="_framework/blazor.webassembly.js"></script>
-  <script>
-    // TODO: Update in the FLuentUI-Blazor library.
-    (function waitForTheme() {
-      if (window.Blazor && Blazor.theme && typeof Blazor.theme.setLightTheme === "function") {
-        console.log("Force the Light theme.");
-        Blazor.theme.setLightTheme();
-      } else {
-        setTimeout(waitForTheme, 50);
-      }
-    })();
+                <rect x="47" y="80" width="6" height="12" fill="#5d4037" />
 
-    // Used to open an URL in a new tab
-    window.openInNewTab = function (url) {
-      window.open(url, '_blank', 'noopener');
-    };
+                <g clip-path="url(#sapin-fill)" fill="#2e7d32" stroke="none">
+                    <path d="M65,65C65,65 74.139,74.636 80,80C80.317,80.291 19.674,80.18 20,80C31.245,73.8 35,65 35,65C35,65 22.865,66.366 25,65C35.256,58.436 40.495,45.936 40.495,45.936C40.495,45.936 33.984,46.16 35.348,45.08C43.777,38.405 50,20 50,20C50,20 58.077,40.508 65.936,45.08C68.097,46.337 59.505,46.364 59.505,46.364C59.505,46.364 69.664,62.286 75,65C77.259,66.149 65,65 65,65Z" />
+                </g>
 
-  </script>
+                <path fill="none" stroke="#1b5e20" stroke-width="2" d="M65,65C65,65 74.139,74.636 80,80C80.317,80.291 19.674,80.18 20,80C31.245,73.8 35,65 35,65C35,65 22.865,66.366 25,65C35.256,58.436 40.495,45.936 40.495,45.936C40.495,45.936 33.984,46.16 35.348,45.08C43.777,38.405 50,20 50,20C50,20 58.077,40.508 65.936,45.08C68.097,46.337 59.505,46.364 59.505,46.364C59.505,46.364 69.664,62.286 75,65C77.259,66.149 65,65 65,65Z" />
+            </svg>
+        </div>
+
+        <div class="loading-progress-text"></div>
+    </div>
+
+    <div id="blazor-error-ui">
+        An unhandled error has occurred.
+        <a href="." class="reload">Reload</a>
+        <span class="dismiss">🗙</span>
+    </div>
+    <script src="_framework/blazor.webassembly.js"></script>
+    <script>
+        // TODO: Update in the FLuentUI-Blazor library.
+        (function waitForTheme() {
+          if (window.Blazor && Blazor.theme && typeof Blazor.theme.setLightTheme === "function") {
+            console.log("Force the Light theme.");
+            Blazor.theme.setLightTheme();
+          } else {
+            setTimeout(waitForTheme, 50);
+          }
+        })();
+
+        // Used to open an URL in a new tab
+        window.openInNewTab = function (url) {
+          window.open(url, '_blank', 'noopener');
+        };
+
+    </script>
 </body>
 
 </html>
