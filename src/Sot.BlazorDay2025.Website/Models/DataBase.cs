@@ -23,7 +23,6 @@ public partial class DataBase
     /// Duration of each time slot in minutes
     /// </summary>
     public const int SlotDuration = 30;
-
     /// <summary />
     public DataBase(IJSRuntime jsRuntime)
     {
@@ -57,6 +56,11 @@ public partial class DataBase
     /// Gets or sets a value indicating whether the application is in preview mode.
     /// </summary>
     public bool PreviewMode { get; set; }
+
+    /// <summary>
+    /// Gets or sets a value indicating whether the home animation should be shown.
+    /// </summary>
+    public bool ShowAnimation { get; set; }
 
     /// <summary />
     private IEnumerable<TeamMember> GetTeamMembers() =>
@@ -153,11 +157,6 @@ public partial class DataBase
             throw new InvalidOperationException($"Duplicate Speaker Id(s) found: {string.Join(", ", duplicateSpeakerIds)}");
         }
 
-        var duplicateSessionIds = Sessions.GroupBy(s => s.Id, StringComparer.Ordinal).Where(g => g.Count() > 1).Select(g => g.Key).ToList();
-        if (duplicateSessionIds.Count > 0)
-        {
-            throw new InvalidOperationException($"Duplicate Session Id(s) found: {string.Join(", ", duplicateSessionIds)}");
-        }
 
         // Verify all Session.SpeakerIds exist in Speakers
         var speakerIdSet = new HashSet<string>(Speakers.Select(s => s.Id), StringComparer.Ordinal);
@@ -170,5 +169,26 @@ public partial class DataBase
             var details = string.Join(", ", missingSpeakerIds.Select(x => $"Session '{x.SessionId}' references missing SpeakerId '{x.SpeakerId}'"));
             throw new InvalidOperationException($"Invalid SpeakerId(s) referenced in Sessions: {details}");
         }
+
+    /// <summary>
+    /// Call this to load the value from localStorage
+    /// </summary>
+    /// <returns></returns>
+    public async Task<bool> LoadShowAnimationAsync()
+    {
+        var value = await _jsRuntime.InvokeAsync<string>("localStorage.getItem", "ShowAnimation");
+        ShowAnimation = !string.Equals(value, "false", StringComparison.OrdinalIgnoreCase);
+
+        return ShowAnimation;
+    }
+
+    /// <summary>
+    /// Call this to save the value to localStorage
+    /// </summary>
+    /// <returns></returns>
+    public async Task SaveShowAnimationAsync(bool value)
+    {
+        ShowAnimation = value;
+        await _jsRuntime.InvokeVoidAsync("localStorage.setItem", "ShowAnimation", ShowAnimation ? "true" : "false");
     }
 }
