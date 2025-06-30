@@ -19,7 +19,7 @@ The 2025 edition will showcase the latest features and developments in:
 - .NET 10 framework
 - Blazor (Server, WebAssembly, and United)
 - ASP.NET Core advancements
-- Related Microsoft web technologies
+- Related Microsoft web technologiessss
 
 ## Organizing Team
 
