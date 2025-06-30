@@ -1,4 +1,4 @@
-// TODO: Update in the FLuentUI-Blazor library.
+// TODO: Update in the FluentUI-Blazor library.
 (function waitForTheme() {
   if (window.Blazor && Blazor.theme && typeof Blazor.theme.setLightTheme === "function") {
     console.log("Force the Light theme.");
