@@ -1,4 +1,5 @@
 let dotNetHelper = null;
+let isPaused = false;
 
 export async function initialize_animation(dotNetRef) {
   //Credit - https://isladjan.com/ and customization by me
@@ -295,6 +296,7 @@ export async function initialize_animation(dotNetRef) {
           },
           duration: duration,
           ease: "none",
+          paused: false,
           onComplete: () => {
             const svg = document.querySelector("svg.parallax");
             gsap.to(svg, {
@@ -317,6 +319,21 @@ export async function initialize_animation(dotNetRef) {
       }
     });
   }
+
+  document.addEventListener("click", () => {
+    isPaused = !isPaused;
+
+    gsap.globalTimeline.timeScale(isPaused ? 0 : 1);
+
+    // Pause ou reprendre tous les ScrollTriggers
+    ScrollTrigger.getAll().forEach(trigger => {
+      if (isPaused) {
+        trigger.disable(false); 
+      } else {
+        trigger.enable();
+      }
+    });
+  });
 
   window.addEventListener("DOMContentLoaded", () => {
     document.body.classList.add("fade-in");
