@@ -43,8 +43,8 @@
 }
 
 .letter {
-  /*animation: bounce 5s infinite;
-  animation-delay: calc(var(--i) * 0.15s);*/
+  /*animation: bounce 5s infinite;*/
+  /*animation-delay: calc(var(--i) * 0.15s);*/
   will-change: transform;
   height: auto;
   width: auto;
