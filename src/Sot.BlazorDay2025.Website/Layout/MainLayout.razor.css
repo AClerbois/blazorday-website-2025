@@ -1,6 +1,6 @@
 .banner {
   background-color: #7FBED5;
-  background-image: url('/img/bg-blazorday.png');
+  background-image: url('/img/bg-blazorday.webp');
   background-repeat: no-repeat;
   background-size: cover;
   -moz-background-clip: content-box;
@@ -158,7 +158,7 @@
       top: -90px;
       left: 50%;
       transform: translateX(-50%) rotate(5deg);
-      background-image: url(/img/blazor-day.png);
+      background-image: url(/img/blazor-day.webp);
       background-repeat: no-repeat;
       background-size: contain;
       width: 280px;
@@ -171,7 +171,7 @@
 
 .fluent-layout[mobile] .banner {
   height: 170px;
-  background-image: url('img/bg-blazorday-mobile.png');
+  background-image: url('img/bg-blazorday-mobile.webp');
 }
 
   .fluent-layout[mobile] .banner::before {
