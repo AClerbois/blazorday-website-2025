@@ -1,12 +1,3 @@
-.content {
-  padding: 0 24px;
-  justify-self: center;
-  max-width: 1140px;
-  width: 100%;
-  min-height: calc(100vh - 380px);
-  z-index: 25;
-}
-
 .banner {
   background-color: #7FBED5;
   background-image: url('/img/bg-blazorday.png');
@@ -17,62 +8,167 @@
   background-clip: content-box;
   background-position: left;
   height: 300px;
-  text-align: center;
-  align-content: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
 }
 
-  .banner::before {
-    background-image: url('/img/mascotte.png');
-    background-repeat: no-repeat;
-    background-size: 75%;
-    content: '';
-    width: 250px;
-    height: 250px;
-    position: relative;
-    display: block;
-    z-index: 99;
-    top: 90px;
-    left: 25px;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    -webkit-user-select: none;
-    user-select: none;
+.mascotte {
+  max-width: 200px;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+  .mascotte img {
+    max-width: 90%;
+    max-height: 100%;
+    height: auto;
+    width: auto;
+    object-fit: contain;
+    margin-top: 60px;
   }
 
-  .banner::after {
-    background-image: url(/img/blazor-day.png);
-    background-repeat: no-repeat;
-    background-size: 100%;
-    content: '';
-    width: 100%;
-    max-width: min(80%, 800px);
-    position: relative;
-    display: block;
-    z-index: 9;
-    top: -68%;
-    left: 20%;
-    height: 100%;
+.animated-title {
+  display: flex;
+  flex: 1 1 auto;
+  justify-content: center;
+  max-width: min(80%, 800px);
+  width: 90vw;
+  position: relative;
+  align-items: flex-end;
+  overflow: hidden;
+}
+
+.letter {
+  animation: bounce 5s infinite;
+  animation-delay: calc(var(--i) * 0.15s);
+  will-change: transform;
+  height: auto;
+  width: auto;
+  max-height: 8vw; 
+  max-width: 10vw;
+  object-fit: contain;
+}
+
+  .letter:nth-child(1) { --i: 0;  }
+  .letter:nth-child(2) { --i: 1;  }
+  .letter:nth-child(3) { --i: 2;  }
+  .letter:nth-child(4) { --i: 3;  }
+  .letter:nth-child(5) { --i: 4;  }
+  .letter:nth-child(6) { --i: 5;  }
+  .letter:nth-child(7) { --i: 6;  }
+  .letter:nth-child(8) { --i: 7;  }
+  .letter:nth-child(9) { --i: 8;  }
+  .letter:nth-child(10) { --i: 9;  }
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
   }
 
-  .banner ::deep .date-text {
-    position: sticky;
-    top: 220px;
-    right: 20px;
+  5% {
+    transform: translateY(-8px);
+  }
+
+  10% {
+    transform: translateY(4px);
+  }
+
+  15% {
+    transform: translateY(-4px);
+  }
+
+  20% {
+    transform: translateY(2px);
+  }
+
+  25% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.date-text {
+  width: 280px;
+  background-color: rgba(255, 255, 255, 0.8);
+  color: var(--blazorday-color);
+  user-select: none;
+  font-size: 1.5em;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 5px;
+  z-index: 10;
+  transform: rotate(-5deg);
+  text-align: center;
+  align-self: flex-end;
+  margin-bottom: 30px;
+  margin-left: -195px;
+  flex: 0 0 auto;
+}
+
+.content {
+  padding: 0 24px;
+  justify-self: center;
+  max-width: 1140px;
+  width: 100%;
+  min-height: calc(100vh - 380px);
+  z-index: 25;
+}
+
+@media screen and (max-width: 600px) {
+  .banner {
+      display:unset;
+  }
+
+  .mascotte {
+    max-width: 110px;
+  }
+
+    .mascotte img {
+      width: 100%;
+      max-height: 100%;
+      height: auto;
+      width: auto;
+      object-fit: contain;
+      margin-top: 45px;
+    }
+
+  .animated-title {
+    display:none;
+  }
+
+  .date-text {
+    position: relative;
+    z-index: 1;
+    flex: unset;
+    margin-right: 10px;
+    margin-bottom: 10px;
     margin-left: auto;
-    width: 300px;
-    background-color: rgba(255, 255, 255, 0.8); /* Optional: for contrast */
-    color: var(--blazorday-color);
-    -moz-user-select: none;
-    -ms-user-select: none;
-    -webkit-user-select: none;
-    user-select: none;
-    font-size: 1.5em;
-    font-weight: bold;
-    padding: 5px 10px;
-    border-radius: 5px;
-    z-index: 10;
-    transform: rotate(-5deg);
   }
+
+    .date-text::before {
+      content: '';
+      position: absolute;
+      top: -90px;
+      left: 50%;
+      transform: translateX(-50%) rotate(5deg);
+      background-image: url(/img/blazor-day.png);
+      background-repeat: no-repeat;
+      background-size: contain;
+      width: 280px;
+      height: 100px;
+      z-index: -1;
+    }
+}
+
+
 
 .fluent-layout[mobile] .banner {
   height: 170px;
@@ -85,12 +181,6 @@
     background-position: bottom;
     top: 25px;
     left: -15px;
-  }
-
-  .fluent-layout[mobile] .banner ::deep img {
-    margin-left: 50px;
-    margin-right: 50px;
-    width: calc(100% - 100px);
   }
 
   .fluent-layout[mobile] .banner ::deep .date-text {
