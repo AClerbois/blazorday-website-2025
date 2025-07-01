@@ -43,12 +43,12 @@
 }
 
 .letter {
-  animation: bounce 5s infinite;
-  animation-delay: calc(var(--i) * 0.15s);
+  /*animation: bounce 5s infinite;*/
+  /*animation-delay: calc(var(--i) * 0.15s);*/
   will-change: transform;
   height: auto;
   width: auto;
-  max-height: 8vw; 
+  max-height: 8vw;
   max-width: 10vw;
   object-fit: contain;
 }
@@ -171,7 +171,7 @@
 
 .fluent-layout[mobile] .banner {
   height: 170px;
-  background-image: url('img/bg-blazorday-mobile.webp');
+  background-image: url('/img/bg-blazorday-mobile.webp');
 }
 
   .fluent-layout[mobile] .banner::before {
