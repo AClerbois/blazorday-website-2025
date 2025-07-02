@@ -11,7 +11,6 @@ namespace Sot.BlazorDay2025.Website.Extensions;
 /// <summary />
 public static class StringExtensions
 {
-
     private static readonly MarkdownPipeline MarkdownPipeline = new MarkdownPipelineBuilder().UseAdvancedExtensions().Build();
 
     /// <summary>
@@ -29,7 +28,6 @@ public static class StringExtensions
         return (MarkupString)Markdown.ToHtml(markdown, MarkdownPipeline);
     }
 
-    
     /// <summary>
     /// Converts a string to a URL-friendly slug (lowercase, alphanumeric, hyphens).
     /// </summary>

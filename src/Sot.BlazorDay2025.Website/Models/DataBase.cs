@@ -11,7 +11,7 @@ namespace Sot.BlazorDay2025.Website.Models;
 [System.Diagnostics.CodeAnalysis.SuppressMessage("Design", "MA0051:Method is too long", Justification = "Required to fill all data items")]
 public partial class DataBase
 {
-    private const string CrLf =  "\r\n";
+    private const string CrLf = "\r\n";
     private readonly IJSRuntime _jsRuntime;
 
     /// <summary>
