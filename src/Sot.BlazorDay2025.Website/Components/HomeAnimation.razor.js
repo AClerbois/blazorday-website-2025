@@ -320,22 +320,22 @@ export async function initialize_animation(dotNetRef) {
     });
   }
 
-  //document.addEventListener("keydown", (event) => {
-  //  if (event.code === "Space") {
-  //    isPaused = !isPaused;
+  document.addEventListener("keydown", (event) => {
+    if (event.code === "Space") {
+      isPaused = !isPaused;
 
-  //    gsap.globalTimeline.timeScale(isPaused ? 0 : 1);
+      gsap.globalTimeline.timeScale(isPaused ? 0 : 1);
 
-  //    // Pause ou reprendre tous les ScrollTriggers
-  //    ScrollTrigger.getAll().forEach(trigger => {
-  //      if (isPaused) {
-  //        trigger.disable(false);
-  //      } else {
-  //        trigger.enable();
-  //      }
-  //    });
-  //  }
-  //});
+      // Pause ou reprendre tous les ScrollTriggers
+      ScrollTrigger.getAll().forEach(trigger => {
+        if (isPaused) {
+          trigger.disable(false);
+        } else {
+          trigger.enable();
+        }
+      });
+    }
+  });
 
   window.addEventListener("DOMContentLoaded", () => {
     document.body.classList.add("fade-in");
