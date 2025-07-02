@@ -37,6 +37,7 @@ public static class StringExtensions
         {
             return string.Empty;
         }
+        
         var slug = value.ToLowerInvariant();
         slug = Regex.Replace(slug, @"[^a-z0-9\s-]", "");
         slug = Regex.Replace(slug, @"[\s-]+", "-");
