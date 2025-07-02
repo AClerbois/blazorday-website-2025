@@ -3,24 +3,15 @@
 <div>
     <h1>Speakers</h1>
 
-    @* Preview mode - To activate after validation *@
-    @if (DataBase.PreviewMode)
-    {
-        <FluentGrid Spacing="4">
+    <FluentGrid Spacing="4">
 
-            @foreach (var speaker in Speakers)
-            {
-                <FluentGridItem Xs="12" Sm="6" Md="4" Lg="3">
-                    <SpeakerCard Id="@speaker.Id" />
-                </FluentGridItem>
-            }
+        @foreach (var speaker in Speakers)
+        {
+            <FluentGridItem Xs="12" Sm="6" Md="4" Lg="3">
+                <SpeakerCard Id="@speaker.Id" />
+            </FluentGridItem>
+        }
 
-        </FluentGrid>
-    }
-    else
-    {
-        <section>
-            The list of speakers is currently being prepared. Stay tuned for more information!
-        </section>
-    }
+    </FluentGrid>
+
 </div>
