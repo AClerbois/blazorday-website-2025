@@ -2,6 +2,12 @@
 /* FluentUI Theme for BlazorDay colors */
 /* *********************************** */
 
+@media (prefers-reduced-motion: no-preference) {
+  :root {
+    scroll-behavior: auto !important;
+  }
+}
+
 body {
   --colorBrandBackground: #4B7B42;
   --colorBrandBackgroundHover: #264E36;
