@@ -2,6 +2,8 @@
 // MIT License - Copyright (c) BlazorDay 2025. All rights reserved.
 // ------------------------------------------------------------------------
 
+using Sot.BlazorDay2025.Website.Extensions;
+
 namespace Sot.BlazorDay2025.Website.Models;
 
 /// <summary />
@@ -16,7 +18,7 @@ public record Session
     }
 
     /// <summary />
-    public required string Id { get; set; }
+    public string Id => Title.ToSlug();
 
     /// <summary />
     public required DateTimeOffset Time { get; set; }

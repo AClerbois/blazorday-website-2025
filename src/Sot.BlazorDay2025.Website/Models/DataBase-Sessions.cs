@@ -14,7 +14,6 @@ public partial class DataBase
     [
         new Session(this)
         {
-            Id = "daniel-roth",
             Time = EventDateUtc.ForSlot(1),
             Duration = DataBase.SlotDuration,
             Title = "The future of web development with ASP.NET Core & Blazor",
@@ -28,7 +27,6 @@ public partial class DataBase
 
         new Session(this)
         {
-            Id = "vincent-baaij",
             Time = EventDateUtc.ForSlot(2),
             Duration = DataBase.SlotDuration,
             Title = "Exploring the Fluent UI Blazor Library v5: Next-Gen Web Components and Architectural Innovations",
@@ -43,7 +41,6 @@ public partial class DataBase
 
         new Session(this)
         {
-            Id = "ed-charbeneau",
             Time = EventDateUtc.ForSlot(3),
             Duration = DataBase.SlotDuration,
             Title = "Designing for AI First: Natural Language UX with Blazor",
@@ -56,7 +53,6 @@ public partial class DataBase
 
         new Session(this)
         {
-            Id = "beth-massi",
             Time = EventDateUtc.ForSlot(4),
             Duration = DataBase.SlotDuration,
             Title = "Build hybrid apps with .NET MAUI & Blazor",
@@ -70,7 +66,6 @@ public partial class DataBase
 
         new Session(this)
         {
-            Id = "james-montemagno",
             Time = EventDateUtc.ForSlot(5),
             Duration = DataBase.SlotDuration,
             Title = "Building a production level Blazor web app with GitHub Copilot",

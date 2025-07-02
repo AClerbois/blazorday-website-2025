@@ -3,6 +3,7 @@
 // ------------------------------------------------------------------------
 
 using Markdig;
+using System.Text.RegularExpressions;
 using Microsoft.AspNetCore.Components;
 
 namespace Sot.BlazorDay2025.Website.Extensions;
@@ -10,6 +11,7 @@ namespace Sot.BlazorDay2025.Website.Extensions;
 /// <summary />
 public static class StringExtensions
 {
+
     private static readonly MarkdownPipeline MarkdownPipeline = new MarkdownPipelineBuilder().UseAdvancedExtensions().Build();
 
     /// <summary>
@@ -25,5 +27,22 @@ public static class StringExtensions
         }
 
         return (MarkupString)Markdown.ToHtml(markdown, MarkdownPipeline);
+    }
+
+    
+    /// <summary>
+    /// Converts a string to a URL-friendly slug (lowercase, alphanumeric, hyphens).
+    /// </summary>
+    public static string ToSlug(this string value)
+    {
+        if (string.IsNullOrWhiteSpace(value))
+        {
+            return string.Empty;
+        }
+        var slug = value.ToLowerInvariant();
+        slug = Regex.Replace(slug, @"[^a-z0-9\s-]", "");
+        slug = Regex.Replace(slug, @"[\s-]+", "-");
+        slug = slug.Trim('-');
+        return slug;
     }
 }
