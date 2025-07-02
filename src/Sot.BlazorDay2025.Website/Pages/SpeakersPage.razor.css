@@ -1,3 +1,10 @@
+.lead {
+  font-size: 1.1em;
+  line-height: 1.5em;
+  letter-spacing: 0.02em;
+  margin-bottom: 24px;
+}
+
 ::deep .fluent-grid > div {
   justify-items: center;
 }
