@@ -10,15 +10,18 @@ namespace Sot.BlazorDay2025.Website.Models;
 public record Session
 {
     private readonly DataBase _dataBase;
+    private readonly string _id;
 
     /// <summary />
-    internal Session(DataBase database)
+    internal Session(DataBase database, string title)
     {
         _dataBase = database;
+        Title = title;
+        _id = title.ToSlug();
     }
 
     /// <summary />
-    public string Id => Title.ToSlug();
+    public string Id => _id;
 
     /// <summary />
     public required DateTimeOffset Time { get; set; }
@@ -27,7 +30,7 @@ public record Session
     public required int Duration { get; set; } = DataBase.SlotDuration;        // Default to 30 minutes
 
     /// <summary />
-    public required string Title { get; set; }
+    public string Title { get; set; }
 
     /// <summary />
     public required string Description { get; set; }

@@ -13,6 +13,9 @@ public static class StringExtensions
 {
     private static readonly MarkdownPipeline MarkdownPipeline = new MarkdownPipelineBuilder().UseAdvancedExtensions().Build();
 
+    private static readonly Regex NonAlphanumericRegex = new Regex("[^a-z0-9\\s-]", RegexOptions.Compiled | RegexOptions.IgnoreCase);
+    private static readonly Regex WhitespaceAndHyphenRegex = new Regex("[\\s-]+", RegexOptions.Compiled);
+
     /// <summary>
     /// Converts a markdown string into a MarkupString object. Returns null if the input is null.
     /// </summary>
@@ -39,8 +42,8 @@ public static class StringExtensions
         }
         
         var slug = value.ToLowerInvariant();
-        slug = Regex.Replace(slug, @"[^a-z0-9\s-]", "");
-        slug = Regex.Replace(slug, @"[\s-]+", "-");
+        slug = NonAlphanumericRegex.Replace(slug, "");
+        slug = WhitespaceAndHyphenRegex.Replace(slug, "-");
         slug = slug.Trim('-');
         return slug;
     }
