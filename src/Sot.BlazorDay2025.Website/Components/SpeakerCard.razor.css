@@ -1,0 +1,13 @@
+.home-card {
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow8);
+  padding: 12px;
+  min-height: 370px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+  .home-card:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 0 2px rgba(0,0,0,0.5), 0 4px 8px rgba(0,0,0,0.5)
+  }

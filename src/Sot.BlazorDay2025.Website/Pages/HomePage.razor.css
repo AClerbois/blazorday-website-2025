@@ -13,6 +13,17 @@
   min-height: 370px;
 }
 
+.home-main-card,
+.home-card
+{
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+  .home-main-card:hover,
+  .home-card:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 0 2px rgba(0,0,0,0.5), 0 4px 8px rgba(0,0,0,0.5)
+  }
+
   .home-card ::deep fluent-button {
     align-self: end;
     margin-bottom: 8px;

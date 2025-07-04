@@ -11,7 +11,13 @@
   margin: 12px;
   width: min(400px, calc(100dvw - 60px));
   min-height: 330px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+  .team-member:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 0 2px rgba(0,0,0,0.5), 0 4px 8px rgba(0,0,0,0.5)
+  }
 
   .team-member ::deep fluent-text {
     text-align: center;

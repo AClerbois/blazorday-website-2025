@@ -1,22 +1,23 @@
 ﻿@page "/speakers"
 
 <div>
-    <h1>Speakers</h1>
+	<section class="smooth-effect">
+		<h1>Speakers</h1>
 
-	<p class="lead">
-		Meet our first announced speakers. Stay tuned for more!
-	</p>
+		<p class="lead">
+			Meet our first announced speakers. Stay tuned for more!
+		</p>
+	</section>
 
+	<FluentGrid Spacing="4">
 
-    <FluentGrid Spacing="4">
+		@foreach (var speaker in Speakers)
+		{
+			<FluentGridItem Xs="12" Sm="6" Md="4" Lg="3">
+				<SpeakerCard Id="@speaker.Id" />
+			</FluentGridItem>
+		}
 
-        @foreach (var speaker in Speakers)
-        {
-            <FluentGridItem Xs="12" Sm="6" Md="4" Lg="3">
-                <SpeakerCard Id="@speaker.Id" />
-            </FluentGridItem>
-        }
-
-    </FluentGrid>
+	</FluentGrid>
 
 </div>

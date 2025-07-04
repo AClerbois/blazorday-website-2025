@@ -1,5 +1,6 @@
 ﻿@using Sot.BlazorDay2025.Website.Extensions
-<FluentCard Width="@Width" Height="@Height">
+
+<div class="home-card" style="width: @Width; height: @Height">
     @if (Speaker is null)
     {
         <FluentSkeleton Pattern="SkeletonPattern.IconTitleContent" Width="100%" Height="100%" />
@@ -39,4 +40,4 @@
                           OnClick="@(async e => await OpenSpeakerDetailAsync(Speaker.Id))" />
         </FluentStack>
     }
-</FluentCard>
+</div>
