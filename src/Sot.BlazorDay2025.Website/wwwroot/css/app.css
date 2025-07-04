@@ -133,3 +133,19 @@ h1, h2, h3, h4, h5, h6 {
     content: var(--blazor-load-percentage-text, "Loading...");
   }
 
+
+/* ************************* */
+/*    Custom                 */
+/* ************************* */
+@keyframes slideIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.smooth-effect {
+  opacity: 0.5;
+  transform: translateY(8px);
+  animation: slideIn 0.5s ease-out forwards;
+}

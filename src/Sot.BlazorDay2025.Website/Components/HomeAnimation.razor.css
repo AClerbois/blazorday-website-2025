@@ -1,7 +1,7 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: "Canva Sans", Arial, Helvetica, sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
   opacity: 0;
   transition: opacity 0.8s ease;
 }
