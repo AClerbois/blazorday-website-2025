@@ -1,0 +1,13 @@
+﻿<div>
+    @foreach (var speaker in DataBase.Speakers)
+    {
+        <FluentImage Source="@speaker.PhotoUrl"
+                     Fit="ImageFit.Contain"
+                     Shape="ImageShape.Circular"
+                     Width="150px"
+                     Height="150px"
+                     Style="cursor: pointer;"
+                     Margin="0 12px"
+                     @onclick="@(async e => await OpenSpeakerDetailAsync(speaker.Id))" />
+    }
+</div>
