@@ -17,7 +17,7 @@ public partial class DataBase
     /// <summary>
     /// Gets or sets the date (without time) of the event.
     /// </summary>
-    public static DateTimeOffset EventDateUtc { get; } = new DateTimeOffset(2025, 9, 25, 15, 0, 0, TimeSpan.Zero);  // 2025-09-25 - 15:00 UTC
+    public static DateTimeOffset EventDateUtc { get; } = new DateTimeOffset(2025, 9, 25, 16, 0, 0, TimeSpan.Zero);  // 2025-09-25 - 16:00 UTC
 
     /// <summary>
     /// Duration of each time slot in minutes

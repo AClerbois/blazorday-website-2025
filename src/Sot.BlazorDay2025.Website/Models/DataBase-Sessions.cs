@@ -9,12 +9,14 @@ namespace Sot.BlazorDay2025.Website.Models;
 [System.Diagnostics.CodeAnalysis.SuppressMessage("Design", "MA0048:File name must match type name", Justification = "To simplify the code")]
 public partial class DataBase
 {
+    private int SessionNumber = -1;
+
     /// <summary />
     private IEnumerable<Session> GetSessions() =>
     [
         new Session(this, "The future of web development with ASP.NET Core & Blazor")
         {
-            Time = EventDateUtc.ForSlot(1),
+            Time = EventDateUtc.ForSlot(SessionNumber++),
             Duration = DataBase.SlotDuration,
             Description = @$"Explore the future of web development with ASP.NET Core & Blazor in .NET 10,
                              including major improvements for security, observability & diagnostics, performance,
@@ -24,9 +26,45 @@ public partial class DataBase
             SpeakerIds = ["daniel-roth"],
         },
 
+        new Session(this, "Understanding Blazor Render Modes")
+        {
+            Time = EventDateUtc.ForSlot(SessionNumber++),
+            Duration = DataBase.SlotDuration,
+            Description = @$"Asp.NET Core Blazor features one of the most powerful and flexible approaches to web development
+                            available today, with reusable components that can run client-side or server-side, static or interactive.
+                            But great flexibility requires understanding where your code is running, and what features are available in each mode.
+                            This session will cover all the render modes of Blazor, client vs. server components, static vs. interactive,
+                            and how to nest components with different modes. Examples, successful patterns, and potential pitfalls all will be shared.",
+            SpeakerIds = ["tim-purdum"],
+        },
+
+        new Session(this, "Building a production level Blazor web app with GitHub Copilot")
+        {
+            Time = EventDateUtc.ForSlot(SessionNumber++),
+            Duration = DataBase.SlotDuration,
+            Description = @$"At the beginning of the year, I set out to build my very first production web app leveraging Blazor.
+                            The only thing is... I am a mobile developer, so I decided to leverage GitHub Copilot to completely build,
+                            test, and deploy it. In this session I will walk through my experience, lessons learned,
+                            and what the future of my app is.",
+            SpeakerIds = ["james-montemagno"],
+        },
+
+        new Session(this, "Blazor Authentication and Authorization")
+        {
+            Time = EventDateUtc.ForSlot(SessionNumber++),
+            Duration = DataBase.SlotDuration,
+            Description = @$"Most web and native apps require some form of authentication to allow users access to the app.
+                            And they use authorization to change the app's behavior based on the user's roles and claims.
+
+                            Learn how to implement Blazor authentication on the server, in WebAssembly, and in a MAUI Hybrid app.
+                            Then learn how to use the current user's identity to authorize access to pages, components,
+                            and UI elements in your Blazor apps.",
+            SpeakerIds = ["rockford-lhotka"],
+        },
+
         new Session(this, "Exploring the Fluent UI Blazor Library v5: Next-Gen Web Components and Architectural Innovations")
         {
-            Time = EventDateUtc.ForSlot(2),
+            Time = EventDateUtc.ForSlot(SessionNumber++),
             Duration = DataBase.SlotDuration,
             Description = @$"Join me for an in-depth session on the upcoming new major version of the Fluent UI Blazor library. It introduces cutting-edge new (Fluent) Web Components and significant architectural changes.
                              This session will cover:
@@ -37,9 +75,20 @@ public partial class DataBase
             SpeakerIds = ["vincent-baaij"],
         },
 
+        new Session(this, "Prerender Blazor WebAssembly And lazy Loading")
+        {
+            Time = EventDateUtc.ForSlot(SessionNumber ++),
+            Duration = DataBase.SlotDuration,
+            Description = @$"Blazor WebAssembly offers a powerful way to build rich, client-side web apps using .NET.
+                            But there's one common pain point: the initial page load. Since the browser must download the entire app—including
+                            DLLs and runtime—users often face a noticeable delay before seeing any content.
+                            In this session, I will explore how prerendering can dramatically improve the user experience.",
+            SpeakerIds = ["sergi-ortiz-gomez"],
+        },
+
         new Session(this, "Designing for AI First: Natural Language UX with Blazor")
         {
-            Time = EventDateUtc.ForSlot(3),
+            Time = EventDateUtc.ForSlot(SessionNumber++),
             Duration = DataBase.SlotDuration,
             Description = @$"Natural Language is the new default user experience. In this session, we’ll explore what it means to design
                              for an AI First UX—where AI isn’t an add-on, but a central part of the experience.
@@ -48,9 +97,19 @@ public partial class DataBase
             SpeakerIds = ["ed-charbeneau"],
         },
 
+                new Session(this, "Clean architecture for a Blazor Application")
+        {
+            Time = EventDateUtc.ForSlot(SessionNumber++),
+            Duration = DataBase.SlotDuration,
+            Description = @$"Blazor is a great technology. Microsoft does not enforce any design principles for Blazor.
+                            When building a more extensive app some design approaches can be useful, however.
+                            In this talk, I will show you can apply clean architecture to a Blazor app.",
+            SpeakerIds = ["johan-smarius"],
+        },
+
         new Session(this, "Build hybrid apps with .NET MAUI & Blazor")
         {
-            Time = EventDateUtc.ForSlot(4),
+            Time = EventDateUtc.ForSlot(SessionNumber++),
             Duration = DataBase.SlotDuration,
             Description = @$"In this session learn why you would choose a hybrid web approach to building native apps with .NET MAUI.
                             Learn about Blazor hybrid and how you can build full-featured native apps for Windows, Mac, iOS and Android
@@ -60,15 +119,5 @@ public partial class DataBase
             SpeakerIds = ["beth-massi"],
         },
 
-        new Session(this, "Building a production level Blazor web app with GitHub Copilot")
-        {
-            Time = EventDateUtc.ForSlot(5),
-            Duration = DataBase.SlotDuration,
-            Description = @$"At the beginning of the year, I set out to build my very first production web app leveraging Blazor.
-                            The only thing is... I am a mobile developer, so I decided to leverage GitHub Copilot to completely build,
-                            test, and deploy it. In this session I will walk through my experience, lessons learned,
-                            and what the future of my app is.",
-            SpeakerIds = ["james-montemagno"],
-        },
     ];
 }

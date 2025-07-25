@@ -19,7 +19,7 @@
     else
     {
         <FluentGrid>
-            <FluentGridItem Xs="12" Md="3">
+            <FluentGridItem Xs="12" Md="2">
                 @foreach (var speaker in Session.Speakers)
                 {
                     <FluentImage Source="@speaker.PhotoUrl"
@@ -27,8 +27,13 @@
                                  Shape="ImageShape.Circular"
                                  Width="100px"
                                  Height="100px" />
+
+                    <FluentText Size="TextSize.Size200" Align="TextAlign.Justify" hidden-when="xs sm">
+                        @speaker.Description.FormatMarkdown()
+                    </FluentText>
                 }
             </FluentGridItem>
+            <FluentGridItem Xs="0" Md="1"></FluentGridItem>
             <FluentGridItem Xs="12" Md="9">
                 <FluentStack Orientation="Orientation.Vertical">
 
