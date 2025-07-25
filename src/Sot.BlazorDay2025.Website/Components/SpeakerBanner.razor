@@ -1,13 +1,19 @@
-﻿<div>
+﻿<div id="speaker-scroll-container" style="overflow-x: hidden; white-space: nowrap; margin: 24px 12px; width: calc(100vw - 90px); max-width: 1068px;">
     @foreach (var speaker in DataBase.Speakers)
     {
-        <FluentImage Source="@speaker.PhotoUrl"
-                     Fit="ImageFit.Contain"
-                     Shape="ImageShape.Circular"
-                     Width="150px"
-                     Height="150px"
-                     Style="cursor: pointer;"
-                     Margin="0 12px"
-                     @onclick="@(async e => await OpenSpeakerDetailAsync(speaker.Id))" />
+        <div style="display: inline-block; width: @SpeakerWidth; text-align: center;">
+            <FluentImage Source="@speaker.PhotoUrl"
+                         Fit="ImageFit.Contain"
+                         Shape="ImageShape.Circular"
+                         Width="@($"calc({SpeakerWidth} - 30px)")"
+                         Height="@($"calc({SpeakerWidth} - 30px)")"
+                         Style="cursor: pointer;"
+                         Margin="0 12px"
+                         @onclick="@(async e => await OpenSpeakerDetailAsync(speaker.Id))" />
+            <br />
+            <FluentText Weight="TextWeight.Bold" Style="height: 30px;" Class="ellipsis-centered">
+                @speaker.Name
+            </FluentText>
+        </div>
     }
 </div>
