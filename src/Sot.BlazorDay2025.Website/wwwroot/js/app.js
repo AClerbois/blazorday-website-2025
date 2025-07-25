@@ -31,3 +31,26 @@ window.getLocalUtcOffset = function () {
   const hours = Math.floor(Math.abs(offsetMinutes) / 60);
   return sign + hours;
 };
+
+window.startHorizontalScroll = function (elementId, speed) {
+  const container = document.getElementById(elementId);
+  if (!container) return;
+
+  let direction = 1; // 1 = right, -1 = left
+
+  function step() {
+    container.scrollLeft += speed * direction;
+
+    // If reached the right end, reverse direction
+    if (container.scrollLeft + container.clientWidth >= container.scrollWidth) {
+      direction = -1;
+    }
+    // If reached the left end, reverse direction
+    if (container.scrollLeft <= 0) {
+      direction = 1;
+    }
+
+    requestAnimationFrame(step);
+  }
+  step();
+};

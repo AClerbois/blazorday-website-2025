@@ -2,8 +2,8 @@
 
 <div>
 
-	<section class="smooth-effect">
-		<h1>The online conf about Blazor</h1>
+    <section class="smooth-effect">
+        <h1>The online conf about Blazor</h1>
         <p style="text-align: center; font-size: larger;">
             After hitting more than 36K viewers for its first and second edition, <br />
             BlazorDay comes back. With more Blazor rock stars, even more fun and more... <b>Blazor love !</b>
@@ -56,6 +56,26 @@
             </p>
         </section>
     </div>
+
+    <FluentStack HorizontalAlignment="HorizontalAlignment.Center" HorizontalGap="24px">
+        <FluentAnchorButton Appearance="ButtonAppearance.Primary"
+                            Size="ButtonSize.Large"
+                            Shape="ButtonShape.Circular"
+                            IconStart="@(new Icons.Regular.Size24.PersonVoice())"
+                            Href="/speakers">
+            Speakers
+        </FluentAnchorButton>
+
+        <FluentAnchorButton Appearance="ButtonAppearance.Primary"
+                            Size="ButtonSize.Large"
+                            Shape="ButtonShape.Circular"
+                            IconStart="@(new Icons.Regular.Size24.CalendarLtr())"
+                            Href="/schedule">
+            Schedule
+        </FluentAnchorButton>
+    </FluentStack>
+
+    <SpeakerBanner />
 
     <FluentGrid Spacing="2">
 

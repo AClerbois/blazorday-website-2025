@@ -15,7 +15,7 @@ public partial class DataBase
             Order = 1,
             Id = "daniel-roth",
             Name = "Daniel Roth",
-            Title = "",
+            Title = "Principal Product Manager, ASP.NET Core & Blazor",
             Company = "Microsoft",
             Description = @$"Daniel Roth is a Principal Product Manager for ASP.NET Core & Blazor on the .NET team at Microsoft.",
             Email = "Daniel.Roth@microsoft.com",
@@ -98,6 +98,77 @@ public partial class DataBase
             Linkedin = "https://www.linkedin.com/in/jamesmontemagno/",
             WebSite = "https://www.montemagno.com/",
             PhotoUrl = "/img/speakers/james-montemagno.jpg",
+        },
+
+        new Speaker(this)
+        {
+            Order = 6,
+            Id = "johan-smarius",
+            Name = "Johan Smarius",
+            Title = "Microsoft MVP, Coach/Trainer",
+            Company = "bergler.nl",
+            Description = @$"Johan has been developing software since 1996 and has worked with .NET since version 1.0. 
+                            With extensive experience as a lead developer and architect for .NET solutions, 
+                            he is deeply passionate about clean coding and test-driven development. 
+                            At JMAC Software Solutions and Bergler, he designs architectures for .NET solutions 
+                            and coaches and trains developers in the domain of software engineering 
+                            in general and Microsoft technologies in particular.",
+            Email = "jsmarius@gmail.com",
+            Linkedin = "https://www.linkedin.com/in/johansmarius/",
+            WebSite = "https://www.bergler.nl/",
+            PhotoUrl = "/img/speakers/johan-smarius.jpg",
+        },
+
+        new Speaker(this)
+        {
+            Order = 7,
+            Id = "rockford-lhotka",
+            Name = "Rockford Lhotka",
+            Title = "Author, Speaker, OSS creator",
+            Company = "xpirit.com",
+            Description = @$"Rockford Lhotka is VP of Strategy at Xebia. He is the creator of the widely used CSLA 
+                            .NET open-source software framework, the author of numerous books, and regularly speaks at major 
+                            conferences around the world. Rockford is a member of the Microsoft Regional Director and MVP programs. 
+                            For more information go to https://lhotka.net.",
+            Email = "rocky@lhotka.net",
+            Linkedin = "https://www.linkedin.com/in/rockfordlhotka/",
+            WebSite = "https://lhotka.net/",
+            PhotoUrl = "/img/speakers/rockford-lhotka.jpg",
+        },
+
+        new Speaker(this)
+        {
+            Order = 8,
+            Id = "tim-purdum",
+            Name = "Tim Purdum",
+            Title = "Creative GIS and Web-based .NET Engineer",
+            Company = "Dymaptic",
+            Description = @$"Tim Purdum is the visionary behind the GeoBlazor mapping library and serves as the Director of Product Development 
+                            at Dymaptic. With a robust background in .NET and web technologies, Tim has been focused on Geographic Information 
+                            Systems (GIS) since 2021. His expertise and passion for technology have made him a sought-after speaker 
+                            at numerous conferences, including Visual Studio Live, TechBash, Iowa Code Camp, and DevUp. 
+                            Tim lives in Cedar Falls, Iowa.",
+            Email = "tim.purdum@dymaptic.com",
+            Linkedin = "https://www.linkedin.com/in/crttim/",
+            WebSite = "https://dymaptic.com/",
+            PhotoUrl = "/img/speakers/tim-purdum.jpg",
+        },
+
+        new Speaker(this)
+        {
+            Order = 9,
+            Id = "sergi-ortiz-gomez",
+            Name = "Sergi Ortiz Gomez",
+            Title = "DrUalcman Programación",
+            Company = "sergiortizgomez.com",
+            Description = @$"I am a Net programmer almost from the beginning with Visual Basic Net and using C# from 2015.
+                            I am using Blazor from first version Released and creating few nuget to share with a community.
+                            In last few years I spend a lot time to learn and share my skills about Blazor
+                            Check [my portfolio](https://aprende-a-programar.com/Animus/), of course, its Blazor WebAssembly.",
+            Email = "drualcman@msn.com",
+            Linkedin = "https://www.linkedin.com/in/sergi-ortiz-gomez/",
+            WebSite = "https://sergiortizgomez.com/",
+            PhotoUrl = "/img/speakers/sergi-ortiz-gomez.jpg",
         },
     ];
 }

@@ -11,14 +11,14 @@ else
     <div style="cursor: pointer;" @onclick="@OpenSessionDetailAsync">
         <FluentStack VerticalAlignment="VerticalAlignment.Center" Margin="@Margin.Vertical3">
 
-            @if (DataBase.PreviewMode)
-            {
-                <FluentStack Orientation="Orientation.Vertical" VerticalAlignment="VerticalAlignment.Center" Height="@Height" Width="@Height">
-                    <FluentText Size="TextSize.Size400" Weight="TextWeight.Semibold">
-                        @SessionLocalTime
-                    </FluentText>
-                </FluentStack>
-            }
+            <FluentStack Orientation="Orientation.Vertical" VerticalAlignment="VerticalAlignment.Center" Height="@Height" Width="@Height">
+                <FluentText Size="TextSize.Size400" Weight="TextWeight.Semibold">
+                    @SessionLocalTime
+                </FluentText>
+                <FluentText Size="TextSize.Size100" Color="Color.Disabled">
+                    @Session.Time.ToString("HH:mm") UTC
+                </FluentText>
+            </FluentStack>
 
             <FluentImage Source="@Speaker?.PhotoUrl"
                          Fit="ImageFit.Contain"

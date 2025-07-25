@@ -7,12 +7,9 @@
         The list of sessions is currently being prepared. Sessions and times are subject to change.
     </section>
 
-    @if (DataBase.PreviewMode)
-    {
-        <div>
-            @DataBase.BrowserTimeZone (@DataBase.UtcOffset)
-        </div>
-    }
+    <div>
+        @DataBase.BrowserTimeZone (@DataBase.UtcOffset)
+    </div>
 
     @foreach (var session in Sessions)
     {

@@ -44,4 +44,7 @@ public record Speaker
 
     /// <summary />
     public required string PhotoUrl { get; init; }
+
+    /// <summary />
+    public IEnumerable<Session> Sessions => _dataBase.Sessions.Where(i => i.SpeakerIds.Contains(Id, StringComparer.OrdinalIgnoreCase));
 }

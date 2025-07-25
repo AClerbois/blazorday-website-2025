@@ -2,7 +2,7 @@
 @using Sot.BlazorDay2025.Website.Extensions
 
 <div>
-    <FluentStack Margin="@Margin.Vertical6">
+    <FluentStack>
         <FluentSpacer />
         <FluentAnchorButton Appearance="ButtonAppearance.Subtle"
                             IconStart="@(new Icons.Regular.Size20.ArrowStepBack())"
@@ -19,21 +19,33 @@
     else
     {
         <FluentGrid>
-            <FluentGridItem Xs="12" Md="3">
+            <FluentGridItem Xs="12" Md="2">
                 @foreach (var speaker in Session.Speakers)
                 {
-                    <FluentImage Source="@speaker.PhotoUrl"
-                                 Fit="ImageFit.Contain"
-                                 Shape="ImageShape.Circular"
-                                 Width="100px"
-                                 Height="100px" />
+                    <FluentStack VerticalAlignment="VerticalAlignment.Bottom">
+                        <FluentImage Source="@speaker.PhotoUrl"
+                                     Fit="ImageFit.Contain"
+                                     Shape="ImageShape.Circular"
+                                     Width="100px"
+                                     Height="100px" />
+                        <FluentSpacer hidden-when="xs sm" />
+                        <FluentLink Appearance="LinkAppearance.Subtle"
+                                    IconStart="@OpenIcon"
+                                    title="Details"
+                                    Href="@($"/speakers/{speaker.Id}")" />
+                    </FluentStack>
+                    <FluentText Size="TextSize.Size200" Align="TextAlign.Justify" hidden-when="xs sm">
+                        @speaker.Description.FormatMarkdown()
+                    </FluentText>
                 }
             </FluentGridItem>
+            <FluentGridItem Xs="0" Md="1"></FluentGridItem>
             <FluentGridItem Xs="12" Md="9">
                 <FluentStack Orientation="Orientation.Vertical">
 
                     <FluentText Weight="TextWeight.Bold" Size="TextSize.Size700" Color="Color.Custom" CustomColor="var(--blazorday-color)">
                         @Session.Title
+                        <span class="session-time"> @SessionLocalTime (@DataBase.UtcOffset)</span>
                     </FluentText>
 
                     <FluentText Weight="TextWeight.Bold" Color="Color.Custom" CustomColor="var(--blazorday-color)">
