@@ -50,7 +50,7 @@ public partial class DataBase
             Id = "vincent-baaij",
             Name = "Vincent Baaij",
             Title = "Fluent UI Blazor library maintainer",
-            Company = "",
+            Company = "Microsoft",
             Description = @$"Vincent has been working as a developer/consultant/architect in the IT industry
                              for over almost 30 years and is still learning new things every day. He currently works as a Cloud Solution
                              Architect at Microsoft where he helps customers to be successful on the Azure platform. He is also
