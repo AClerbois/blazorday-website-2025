@@ -15,6 +15,9 @@ else
                 <FluentText Size="TextSize.Size400" Weight="TextWeight.Semibold">
                     @SessionLocalTime
                 </FluentText>
+                <FluentText Size="TextSize.Size100" Color="Color.Disabled">
+                    @Session.Time.ToString("HH:mm") UTC
+                </FluentText>
             </FluentStack>
 
             <FluentImage Source="@Speaker?.PhotoUrl"

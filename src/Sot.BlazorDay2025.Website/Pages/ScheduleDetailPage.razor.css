@@ -1,3 +1,8 @@
 ::deep p {
   margin: 1em 0;
 }
+
+::deep .session-time {
+  font-size: x-small;
+  white-space: nowrap;
+}
