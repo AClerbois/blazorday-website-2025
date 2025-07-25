@@ -59,6 +59,23 @@
                             Web site
                         </FluentLink>
                     </FluentStack>
+
+                    <FluentText Weight="TextWeight.Bold" Color="Color.Custom" CustomColor="var(--blazorday-color)" Margin="48px 0 16px 0">
+                        Sessions:
+                    </FluentText>
+
+                    @foreach (var session in Speaker.Sessions)
+                    {
+                        <FluentStack VerticalAlignment="VerticalAlignment.Center">
+                            <FluentIcon Value="@(new Icons.Regular.Size16.ArrowCircleRight())" Margin="@Margin.Right2" />
+                            <FluentLink Href="@($"/schedule/{session.Id}")">
+                                @session.Title
+                            </FluentLink>
+                        </FluentStack>
+                    }
+
+                    <div style="min-height: 48px" />
+
                 </FluentStack>
             </FluentGridItem>
         </FluentGrid>

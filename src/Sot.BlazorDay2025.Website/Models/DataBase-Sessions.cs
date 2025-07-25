@@ -55,8 +55,7 @@ public partial class DataBase
             Duration = DataBase.SlotDuration,
             Description = @$"Most web and native apps require some form of authentication to allow users access to the app.
                             And they use authorization to change the app's behavior based on the user's roles and claims.
-
-                            Learn how to implement Blazor authentication on the server, in WebAssembly, and in a MAUI Hybrid app.
+                            {CrLf} Learn how to implement Blazor authentication on the server, in WebAssembly, and in a MAUI Hybrid app.
                             Then learn how to use the current user's identity to authorize access to pages, components,
                             and UI elements in your Blazor apps.",
             SpeakerIds = ["rockford-lhotka"],
