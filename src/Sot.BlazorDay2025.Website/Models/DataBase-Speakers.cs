@@ -170,5 +170,25 @@ public partial class DataBase
             WebSite = "https://sergiortizgomez.com/",
             PhotoUrl = "/img/speakers/sergi-ortiz-gomez.jpg",
         },
+
+        new Speaker(this)
+        {
+            Order = 10,
+            Id = "jimmy-engstrom",
+            Name = "Jimmy Engström",
+            Title = "Lead Developer, Microsoft MVP, Progress Champion",
+            Company = "sergiortizgomez.com",
+            Description = @$"Jimmy Engström has been developing ever since he was 7 years old and got his first computer.
+                            He loves to be on the cutting edge of technology, trying new things.
+                            When he got wind of Blazor, he immediately realized its potential and adopted it when it was in beta. He has been running Blazor in production since it was launched by Microsoft.
+                            He is the author of ""Web Development with Blazor"" and the co-host of Coding After Work (podcast and stream).
+                            His passion for the .NET industry and community has taken him around the world, speaking about development. Microsoft has recognized this passion by awarding him the
+                            Microsoft Most Valuable Professional award 11 years in a row.
+                            He occasionally blogs at engstromjimmy.com.",
+            Email = "jimmy@apeoholic.se",
+            Linkedin = "https://www.linkedin.com/in/engstromjimmy/",
+            WebSite = "https://engstromjimmy.com/",
+            PhotoUrl = "/img/speakers/jimmy-engstrom.jpg",
+        },
     ];
 }

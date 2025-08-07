@@ -118,5 +118,17 @@ public partial class DataBase
             SpeakerIds = ["beth-massi"],
         },
 
+        new Session(this, "Blazor in .NET 10: The Next Chapter")
+        {
+            Time = EventDateUtc.ForSlot(SessionNumber++),
+            Duration = DataBase.SlotDuration,
+            Description = @$"Blazor keeps evolving, and with .NET 10 it’s getting even better.  
+                             In this session, we’ll explore the latest updates that make Blazor faster, more flexible, and even
+                             easier to work with. Whether you build interactive web apps with Blazor Server, WebAssembly,
+                             or hybrid approaches, you’ll leave with fresh ideas and practical tips to take advantage of what’s new.  
+                             If you’ve been curious about where Blazor is heading, or want to make sure you’re ready for the future,
+                             this talk will get you up to speed.",
+            SpeakerIds = ["jimmy-engstrom"],
+        },
     ];
 }
