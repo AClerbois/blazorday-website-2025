@@ -177,7 +177,7 @@ public partial class DataBase
             Id = "jimmy-engstrom",
             Name = "Jimmy Engström",
             Title = "Lead Developer, Microsoft MVP, Progress Champion",
-            Company = "sergiortizgomez.com",
+            Company = "CAB Group AB",
             Description = @$"Jimmy Engström has been developing ever since he was 7 years old and got his first computer.
                             He loves to be on the cutting edge of technology, trying new things.
                             When he got wind of Blazor, he immediately realized its potential and adopted it when it was in beta. He has been running Blazor in production since it was launched by Microsoft.
