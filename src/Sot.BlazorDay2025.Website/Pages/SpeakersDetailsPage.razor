@@ -47,17 +47,17 @@
                     </FluentText>
 
                     <FluentStack>
-                        <FluentLink Href="@Speaker.Linkedin" Target="LinkTarget.Blank" Class="speaker-link" Margin="@Margin.Vertical1">
+                        <a href="@Speaker.Linkedin" target="_blank" class="speaker-link my-1">
                             <img src="/img/logo-linkedin.png" alt="linkedin" style="width: 18px;" />
                             LinkedIn
-                        </FluentLink>
+                        </a>
 
                         <FluentSpacer />
 
-                        <FluentLink Href="@Speaker.WebSite" Target="LinkTarget.Blank" Class="speaker-link" Margin="@Margin.Vertical1">
+                        <a href="@Speaker.WebSite" target="LinkTarget.Blank" class="speaker-link my-1">
                             <img src="/img/logo-web.png" alt="Web site" style="width: 18px;" />
                             Web site
-                        </FluentLink>
+                        </a>
                     </FluentStack>
 
                     <FluentText Weight="TextWeight.Bold" Color="Color.Custom" CustomColor="var(--blazorday-color)" Margin="48px 0 16px 0">
