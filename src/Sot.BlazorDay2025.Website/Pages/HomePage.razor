@@ -28,9 +28,9 @@
             <FluentButton Appearance="ButtonAppearance.Primary"
                           Size="ButtonSize.Large"
                           Shape="ButtonShape.Circular"
-                          IconStart="@(new Icons.Regular.Size24.VideoLink())"
-                          OnClick="@(async e => await FollowLiveAsync())">
-                Follow live
+                          IconStart="@(new Icons.Regular.Size24.ClockAlarm())"
+                          OnClick="@(async e => await GetReminderAsync())">
+                Get a reminder
             </FluentButton>
         </div>
     }

@@ -43,9 +43,9 @@ public partial class DataBase
     }
 
     /// <summary>
-    /// URL to the live stream of the event
+    /// URL to the event reminder (Lu.ma)
     /// </summary>
-    public string LiveUrl = "https://www.youtube.com/live/4xDzrJKXOOY";
+    public string ReminderUrl = "https://lu.ma/8w0qt7cy";
 
     /// <summary>
     /// URL to the Call for Paper page
@@ -72,27 +72,27 @@ public partial class DataBase
             ImageUrl = "/img/team-laurent.jpg",
             LinkedIn = "https://www.linkedin.com/in/lbugnion/",
         },
-         new TeamMember(this)
+        new TeamMember(this)
         {
             Name = "Adrien Clerbois",
             Title = "Microsoft MVP & .NET Technical Architect",
             ImageUrl = "/img/team-adrien.jpg",
             LinkedIn = "https://www.linkedin.com/in/aclerbois/",
         },
-         new TeamMember(this)
-         {
-             Name = "Christophe Peugnet",
-             Title = "Microsoft MVP & .NET / Dev Blazor | Blazor Trainer",
-             ImageUrl = "/img/team-christophe.jpg",
-             LinkedIn = "https://www.linkedin.com/in/christophepeugnet/",
-         },
-         new TeamMember(this)
-         {
-             Name = "Denis Voituron",
-             Title = "Principal Software Engineer @ Microsoft",
-             ImageUrl = "/img/team-denis.jpg",
-             LinkedIn = "https://www.linkedin.com/in/denisvoituron/",
-         },
+        new TeamMember(this)
+        {
+            Name = "Christophe Peugnet",
+            Title = "Microsoft MVP & .NET / Dev Blazor | Blazor Trainer",
+            ImageUrl = "/img/team-christophe.jpg",
+            LinkedIn = "https://www.linkedin.com/in/christophepeugnet/",
+        },
+        new TeamMember(this)
+        {
+            Name = "Denis Voituron",
+            Title = "Principal Software Engineer @ Microsoft",
+            ImageUrl = "/img/team-denis.jpg",
+            LinkedIn = "https://www.linkedin.com/in/denisvoituron/",
+        },
     ];
 
     /// <summary />

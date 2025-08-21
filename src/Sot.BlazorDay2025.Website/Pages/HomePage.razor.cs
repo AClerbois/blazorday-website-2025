@@ -29,9 +29,9 @@ public partial class HomePage
     [Inject]
     public required IJSRuntime JSRuntime { get; set; }
 
-    private async Task FollowLiveAsync()
+    private async Task GetReminderAsync()
     {
-        await JSRuntime.InvokeVoidAsync("openInNewTab", DataBase.LiveUrl);
+        await JSRuntime.InvokeVoidAsync("openInNewTab", DataBase.ReminderUrl);
     }
 
     private async Task CallForPaperAsync()
