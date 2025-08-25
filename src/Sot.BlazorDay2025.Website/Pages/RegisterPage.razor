@@ -1,0 +1,15 @@
+﻿@page "/register"
+@page "/reminder"
+@using Sot.BlazorDay2025.Website.Models
+@inject IJSRuntime JS
+
+<p>
+    Redirecting to registration page... If you are not redirected automatically, please <a href="@DataBase.ReminderUrl">click here</a>.
+</p>
+
+@code {
+    protected override async Task OnInitializedAsync()
+    {
+        await JS.InvokeVoidAsync("window.location.replace", DataBase.ReminderUrl);
+    }
+}

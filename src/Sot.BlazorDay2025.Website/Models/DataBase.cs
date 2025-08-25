@@ -45,12 +45,12 @@ public partial class DataBase
     /// <summary>
     /// URL to the event reminder (Lu.ma)
     /// </summary>
-    public string ReminderUrl = "https://lu.ma/8w0qt7cy";
+    public const string ReminderUrl = "https://lu.ma/8w0qt7cy";
 
     /// <summary>
     /// URL to the Call for Paper page
     /// </summary>
-    public string CallForPaperUrl = "https://sessionize.com/blazor-day-2025/";
+    public const string CallForPaperUrl = "https://sessionize.com/blazor-day-2025/";
 
     /// <summary>
     /// Gets or sets a value indicating whether the application is in preview mode.
