@@ -14,8 +14,11 @@ public partial class HomePage
 {
     private static readonly Icon OpenIcon = new Microsoft.FluentUI.AspNetCore.Components.Icons.Regular.Size20.Open();
     private static readonly DateTime CallForPaperDeadline = new(2025, 8, 1);
+    private static readonly DateTimeOffset ReminderDeadLine = new(2025, 9, 24, 14, 0, 0, TimeSpan.Zero); // 2025-09-24 - 16:00 UTC+2
 
     private static bool IsCallForPaperOpen => DateTime.UtcNow.Date <= CallForPaperDeadline;
+
+    private static bool IsReminderOpen => DateTimeOffset.UtcNow <= ReminderDeadLine;
 
     /// <summary />
     [Inject]
@@ -37,6 +40,11 @@ public partial class HomePage
     private async Task CallForPaperAsync()
     {
         await JSRuntime.InvokeVoidAsync("openInNewTab", DataBase.CallForPaperUrl);
+    }
+
+    private async Task WatchLiveStreamAsync()
+    {
+        await JSRuntime.InvokeVoidAsync("openInNewTab", DataBase.LiveStreamUrl);
     }
 
     /// <summary>
