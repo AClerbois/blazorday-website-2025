@@ -14,7 +14,7 @@ public partial class HomePage
 {
     private static readonly Icon OpenIcon = new Microsoft.FluentUI.AspNetCore.Components.Icons.Regular.Size20.Open();
     private static readonly DateTime CallForPaperDeadline = new(2025, 8, 1);
-    private static readonly DateTimeOffset ReminderDeadLine = new(2025, 9, 25, 14, 0, 0, TimeSpan.Zero); // 2025-09-25 - 16:00 UTC+2
+    private static readonly DateTimeOffset ReminderDeadLine = new(2025, 9, 24, 14, 0, 0, TimeSpan.Zero); // 2025-09-24 - 16:00 UTC+2
 
     private static bool IsCallForPaperOpen => DateTime.UtcNow.Date <= CallForPaperDeadline;
 
