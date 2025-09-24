@@ -34,3 +34,19 @@
   text-align: center;
   padding: 24px;
 }
+
+::deep .live-button-effect {
+  animation: pulseScale 2.5s ease-in-out infinite;
+  transform-origin: center;
+}
+
+/* Animation qui fait grandir puis revenir à la taille normale */
+@keyframes pulseScale {
+  0%, 100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.17);
+  }
+}

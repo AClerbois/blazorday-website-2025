@@ -48,6 +48,11 @@ public partial class DataBase
     public const string ReminderUrl = "https://lu.ma/8w0qt7cy";
 
     /// <summary>
+    /// URL to the live stream (YouTube)
+    /// </summary>
+    public const string LiveStreamUrl = "https://www.youtube.com/live/Fw3B39OA_1s";
+
+    /// <summary>
     /// URL to the Call for Paper page
     /// </summary>
     public const string CallForPaperUrl = "https://sessionize.com/blazor-day-2025/";

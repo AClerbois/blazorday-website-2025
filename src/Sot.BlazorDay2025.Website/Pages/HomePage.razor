@@ -25,13 +25,29 @@
     else
     {
         <div class="follow-live">
+            @if (IsReminderOpen)
+            {
+                <FluentButton Appearance="ButtonAppearance.Default"
+                              Size="ButtonSize.Large"
+                              Shape="ButtonShape.Circular"
+                              IconStart="@(new Icons.Regular.Size24.ClockAlarm())"
+                              OnClick="@(async e => await GetReminderAsync())">
+                    Register / Get a reminder
+                </FluentButton>
+                <br />
+                <br />
+            }
+     
             <FluentButton Appearance="ButtonAppearance.Primary"
                           Size="ButtonSize.Large"
                           Shape="ButtonShape.Circular"
-                          IconStart="@(new Icons.Regular.Size24.ClockAlarm())"
-                          OnClick="@(async e => await GetReminderAsync())">
-                Register / Get a reminder
+                          Class="live-button-effect"
+                          IconStart="@(new Icons.Filled.Size24.ArrowStepInRight())"
+                          IconEnd="@(new Icons.Filled.Size24.ArrowStepInLeft())"
+                          OnClick="@(async e => await WatchLiveStreamAsync())">
+                Watch the Live
             </FluentButton>
+
         </div>
     }
 
